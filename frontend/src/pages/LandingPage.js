@@ -11,11 +11,18 @@ import Themes from '../components/Themes';
 import Timeline from '../components/Timeline';
 
 function LandingPage() {
+  const launchDate = new Date("April 15, 2023 12:00:00");
+
+  // Calculate the initial countdown value
+  const currentTime = new Date();
+  const initialCountdown = Math.floor(
+    (launchDate.getTime() - currentTime.getTime()) / 1000
+  );
   return (
-    <div>
+    <div style={{background:"#002147"}}>
       <Navbar />
       <Landing />
-      <Counter />
+      <Counter initialCountdown={initialCountdown} />
       <About />
       <Timeline />
       <Themes />
