@@ -1,6 +1,6 @@
 function Themes() {
     return (
-        <div>Themes</div>
+        <div id="themes">Themes</div>
     );
 }
 
