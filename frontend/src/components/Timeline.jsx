@@ -1,6 +1,6 @@
 function Timeline() {
     return (
-        <div>Timeline</div>
+        <div id="schedule">Timeline</div>
     );
 }
 
