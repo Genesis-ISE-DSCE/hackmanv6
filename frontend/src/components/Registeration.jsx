@@ -1,7 +1,12 @@
 import eva_lightleft from "../assets/images/eva_lightbgleft.png";
 import eva_lightright from "../assets/images/eva_lightbgright.png";
+import {useNavigate} from 'react-router-dom';
 
 function Registeration() {
+    const navigate = useNavigate();
+    const navigateToNextPage = () => {
+        navigate('/Registration2');
+    };
     return (
         <div className="bg-[#24263B] pt-12 min-h-screen">
             <div>
@@ -49,13 +54,11 @@ function Registeration() {
                         <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-full-name" type="text" placeholder="Enter your college name"></input>
                     </div>
                 </div>
-
-
                 </div>
                 
                 <div className="">
                     <div className="flex justify-center">
-                    <button className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#ae40fe] hover:text-white focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
+                    <button onClick={navigateToNextPage} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#ae40fe] hover:text-white focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
                         Next
                     </button>
                     </div>
