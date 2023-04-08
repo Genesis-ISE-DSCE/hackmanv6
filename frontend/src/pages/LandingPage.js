@@ -19,7 +19,7 @@ function LandingPage() {
     (launchDate.getTime() - currentTime.getTime()) / 1000
   );
   return (
-    <div style={{background:"#27273F" ,color: "white" }}>
+    <div>
       <Landing />
       <Navbar />
       <Counter initialCountdown={initialCountdown} />
