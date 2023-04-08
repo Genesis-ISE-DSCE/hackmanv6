@@ -35,8 +35,13 @@ function Footer() {
                 </div>
             </div>
 
+            <div className='lg:flex lg:justify-center md:flex md:justify-center pt-2'>
+            <div className='text-center lg:text-md md:text-md text-xs lg:pb-4 md:pb-4 pb-2'>
+                <a href="#" target="_blank" className='text-green-300'>Privacy Policy </a>| Hackman v6.0 &#169; 2023 |&nbsp;
+            </div>
             <div className='text-center lg:text-md md:text-md text-xs pb-4'>
-                <a href="#" target="_blank" className='text-green-300'>Privacy Policy </a>| Hackman v6.0 &#169; 2023 | <a href="#" target="_blank" className='text-green-300'>Terms & Conditions</a> 
+                Made by team Genesis | <a href="#" target="_blank" className='text-green-300'>Terms & Conditions</a>
+            </div>
             </div>
 
         </div>
