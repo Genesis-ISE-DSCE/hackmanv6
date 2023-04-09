@@ -11,9 +11,8 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5
-         py-5 flex justify-between items-center z-10">
-          <img src={require('../assets/images/hackman_logo.png')} alt="Logo" className="text-[#E5F2FF] font-medium h-8" />
+        <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5 py-5 flex justify-between items-center z-10">
+            <img src={require('../assets/images/hackman_logo.png')} alt="Logo" className="text-[#E5F2FF] font-medium h-8" />
           
             <div className="flex hidden md:block">
                 <a href="#landing" className="text-[#22C3FF] font-small sm:text-2xl text-[18px] sm:mr-8 mr-3">Home</a>
@@ -59,11 +58,11 @@ const Navbar = () => {
                     setIsOpen(!isOpen);
                     // jump("registration");
                 }} className="pt-1 pb-2 sm:px-8 px-3 rounded-lg sm:mr-8" style={{ backgroundColor: "#D4DFC7" }}>
-                    <a href="/Registration" target="_blank" className="text-[#071E22] font-medium sm:text-xl text-lg">Register</a>
+                    <a href="/registration" target="_blank" className="text-[#071E22] font-medium sm:text-xl text-lg">Register</a>
                 </button>
             </div>
         </nav>
-    )
+    );
 }
 
 export default Navbar

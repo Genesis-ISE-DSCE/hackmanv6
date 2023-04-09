@@ -20,11 +20,11 @@ function Counter(props) {
     const seconds = Math.floor(countdown % 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
     return(
-        <div id="landing" className="bg-[#27273F] lg:pb-12 md:pb-8 pb-6">
+        <div id="landing" className="bg-[#27273F] lg:pb-12 md:pb-8 pb-16 pt-36">
             <section>
                 <div className="items-center justify-center">
                     <div className="items-center justify-center" style={{ position: "relative", top: "-30px" }}>
-                        <img className="sm:px-[20%] px-[10%] pt-28" alt="Poster1" src={require('../assets/images/hackman_logo.png')} />
+                        <img className="sm:px-[20%] px-[10%] pt-28 pb-16" alt="Poster1" src={require('../assets/images/hackman_logo.png')} />
                     </div>
                     <div>
                         <img className="lg:float-left lg:ml-48 md:float-left md:ml-8 float-left" src={eva_bg_small_lef} alt="Registration eva" />
