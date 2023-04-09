@@ -24,6 +24,9 @@ const register = (req, res) => {
   });
 };
 
+
+// A method to retrieve all the done registrations 
+
 const getRegistrations = (req, res) => {
   Registration.find({}, (err, registrations) => {
     if (err) {
