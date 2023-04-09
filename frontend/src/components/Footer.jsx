@@ -6,7 +6,7 @@ import '../index.css';
 function Footer() {
     return (
         <div className="bg-[#23354E]">
-            <div className="lg:text-6xl md:text-4xl text-[#22C3FF] pt-4 text-center font-poppins font-bold text-3xl">Contact</div>
+            <div className="lg:text-6xl md:text-4xl text-[#22C3FF] pt-4 text-center font-poppins font-bold text-3xl">CONTACT</div>
 
             <div className="lg:pt-8 lg:mx-36 lg:flex lg:justify-between md:pt-8 md:mx-16 md:flex md:justify-between pt-6 mx-8 text-[#D4DFC7]">
                 <div className="hover:text-[#22C3FF] lg:inline-flex lg:text-left md:inline-flex md:text-left text-center pb-1">
@@ -25,22 +25,22 @@ function Footer() {
 
             <div className="pt-6 flex justify-center pb-4 text-[#D4DFC7]">
                 <div className="">
-                <a href="https://www.instagram.com/wearehackman/" target="_blank"><FontAwesomeIcon icon={faLinkedin} className='text-5xl hover:scale-150'></FontAwesomeIcon></a>
+                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faLinkedin} className='text-5xl hover:scale-150'></FontAwesomeIcon></a>
                 </div>
                 <div className="ml-8 insta">
-                <a href="https://www.instagram.com/wearehackman/" target="_blank"><FontAwesomeIcon icon={faInstagram} className='text-5xl hover:scale-150'></FontAwesomeIcon></a>
+                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faInstagram} className='text-5xl hover:scale-150'></FontAwesomeIcon></a>
                 </div>
                 <div className="ml-8">
-                <a href="https://www.instagram.com/wearehackman/" target="_blank"><FontAwesomeIcon icon={faFacebook} className='text-5xl hover:scale-150'></FontAwesomeIcon></a>
+                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faFacebook} className='text-5xl hover:scale-150'></FontAwesomeIcon></a>
                 </div>
             </div>
 
             <div className='lg:flex lg:justify-center md:flex md:justify-center pt-2 text-[#D4DFC7]'>
                 <div className='text-center lg:text-md md:text-md text-xs lg:pb-4 md:pb-4 pb-2'>
-                    <a href="#" target="_blank" className='text-green-300'>Privacy Policy </a>| Hackman v6.0 &#169; 2023 |&nbsp;
+                    <a href="#/" rel='noreferrer noopener' target="_blank" className='text-green-300'>Privacy Policy </a>| Hackman v6.0 &#169; 2023 |&nbsp;
                 </div>
                 <div className='text-center lg:text-md md:text-md text-xs pb-4'>
-                    Made by team Genesis | <a href="#" target="_blank" className='text-green-300'>Terms & Conditions</a>
+                    Made by team Genesis | <a href="#/" rel='noreferrer noopener' target="_blank" className='text-green-300'>Terms & Conditions</a>
                 </div>
             </div>
         </div>
