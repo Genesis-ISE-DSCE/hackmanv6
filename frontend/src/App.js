@@ -1,6 +1,6 @@
 import './App.css';
 import LandingPage from './pages/LandingPage';
-import Registeration from './pages/RegisterationPage';
+import RegisterationPage from './pages/RegisterationPage';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LandingPage />}/>
-        <Route path="/registeration" element={<Registeration />}/>
+        <Route path="/registeration" element={<RegisterationPage />}/>
       </Routes>
     </BrowserRouter>
   );
