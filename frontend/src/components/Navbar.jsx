@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const jump = (target) => {
-        const violation = document.getElementById(target);
-        window.scrollTo({
-            top: violation.offsetTop,
-            behavior: "smooth"
-        });
-    };
+    // const jump = (target) => {
+    //     const violation = document.getElementById(target);
+    //     window.scrollTo({
+    //         top: violation.offsetTop,
+    //         behavior: "smooth"
+    //     });
+    // };
 
     return (
         <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5 py-1 md:py-1 flex justify-between items-center z-10">
@@ -30,7 +31,7 @@ const Navbar = () => {
 
             {/* Regiter button */}
             <button className="hidden lg:block pt-0.5 pb-1 right-0 px-5 py-3 rounded-lg mt-2 mb-2 mr-2" style={{ backgroundColor: "#D4DFC7" }}>
-                <a href="/Registration" target="_blank" className="text-[#071E22] font-medium text-base">Register</a>
+                <Link to={"/registeration"} target="_blank" className="text-[#071E22] font-medium text-base">Register</Link>
             </button>
 
 
@@ -52,7 +53,7 @@ const Navbar = () => {
 
                 {/* Register button inside dropdown menu*/}
                 <button onClick={() => { setIsOpen(!isOpen); }} className="pb-1 px-2 rounded-lg" style={{ backgroundColor: "#D4DFC7" }}>
-                    <a href="/registration" target="_blank" className="text-[#071E22] font-medium text-sm">Register</a>
+                    <Link to={"/registeration"} target="_blank" className="text-[#071E22] font-medium text-sm">Register</Link>
                 </button>
 
             </div>
