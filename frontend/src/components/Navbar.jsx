@@ -19,19 +19,19 @@ const Navbar = () => {
 
             {/* Navbar for large screens */}
             {/* The navigation elements div */}
-            <div className="flex hidden lg:block">
+            <div className="hidden lg:block">
 
-                <a href="#landing" className="text-[#22C3FF] text-base  text-[18px] sm:mr-8 mr-3">Home</a>
-                <a href="#themes" className="text-[#22C3FF] text-base  text-[18px] sm:mr-8 mr-3">Themes</a>
-                <a href="#schedule" className="text-[#22C3FF] text-base  text-[18px] sm:mr-8 mr-3">Schedule</a>
-                <a href="#sponsors" className="text-[#22C3FF] text-base  text-[18px] sm:mr-8 mr-3">Sponsors</a>
-                <a href="#faq" className="text-[#22C3FF] text-base  text-[18px] sm:mr-8 mr-3">FAQs</a>
+                <a href="#landing" className="text-[#22C3FF] text-base text-[22px] sm:mr-8 mr-3 hover:text-[26px]">Home</a>
+                <a href="#themes" className="text-[#22C3FF] text-base text-[22px] sm:mr-8 mr-3 hover:text-[26px]">Themes</a>
+                <a href="#schedule" className="text-[#22C3FF] text-base text-[22px] sm:mr-8 mr-3 hover:text-[26px]">Schedule</a>
+                <a href="#sponsors" className="text-[#22C3FF] text-base text-[22px] sm:mr-8 mr-3 hover:text-[26px]">Sponsors</a>
+                <a href="#faq" className="text-[#22C3FF] text-base text-[22px] sm:mr-8 mr-3 hover:text-[26px]">Faqs</a>
            
             </div>
 
             {/* Regiter button */}
-            <button className="hidden lg:block pt-0.5 pb-1 right-0 px-5 py-3 rounded-lg mt-2 mb-2 mr-2" style={{ backgroundColor: "#D4DFC7" }}>
-                <Link to={"/registeration"} target="_blank" className="text-[#071E22] font-medium text-base">Register</Link>
+            <button className="hidden lg:block pt-0.5 pb-1 right-0 px-5 py-3 rounded-lg mt-2 mb-2 mr-2 text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#ae40fe]">
+                <Link to={"/registeration"} className="font-semibold text-base">Register</Link>
             </button>
 
 
@@ -45,15 +45,15 @@ const Navbar = () => {
             {/* Navigation elements inside dropdown menu */}
             <div className={`${isOpen ? "block" : "hidden"} lg:hidden absolute top-10 left-0 right-0 bg-[#23354E] text-center rounded-lg pb-4`}>
 
-                <a href="#" className="block text-[#E5F2FF] font-bold text-sm text-2xl mb-1" onClick={() => { setIsOpen(!isOpen); }} >Home</a>
+                <a href="#" className="block text-[#E5F2FF] font-bold text-sm mb-1" onClick={() => { setIsOpen(!isOpen); }} >Home</a>
                 <a href="#themes" className="block text-[#E5F2FF] font-bold text-sm mb-1" onClick={() => { setIsOpen(!isOpen); }} >Themes</a>
                 <a href="#schedule" className="block text-[#E5F2FF] font-bold text-sm mb-1" onClick={() => { setIsOpen(!isOpen); }} >Schedule</a>
                 <a href="#sponsors" className="block text-[#E5F2FF] font-bold text-sm mb-1" onClick={() => { setIsOpen(!isOpen); }} >Sponsors</a>
                 <a href="#faq" className="block text-[#E5F2FF] font-bold text-sm mb-2" onClick={() => { setIsOpen(!isOpen); }} >FAQ</a>
 
                 {/* Register button inside dropdown menu*/}
-                <button onClick={() => { setIsOpen(!isOpen); }} className="pb-1 px-2 rounded-lg" style={{ backgroundColor: "#D4DFC7" }}>
-                    <Link to={"/registeration"} target="_blank" className="text-[#071E22] font-medium text-sm">Register</Link>
+                <button onClick={() => { setIsOpen(!isOpen); }} className="pb-1 px-2 rounded-lg text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#ae40fe]">
+                    <Link to={"/registeration"} className="text-[#071E22] font-medium text-sm">Register</Link>
                 </button>
 
             </div>
