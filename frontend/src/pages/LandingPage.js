@@ -21,7 +21,7 @@ function LandingPage() {
   return (
     <div>
       <Landing />
-      <Navbar />
+      <Navbar currentPage = 'landing'/>
       <Counter initialCountdown={initialCountdown} />
       <About />
       <Timeline />

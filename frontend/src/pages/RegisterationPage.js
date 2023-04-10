@@ -57,7 +57,7 @@ function RegisterationPage() {
 
     return (
       <div>
-        <Navbar />
+        <Navbar currentPage='registration'/>
         {PageDisplay(page)}
         <div className='bg-[#24263B] lg:pb-80 md:pb-16 pb-56'>{ButtonDisplay(page)}</div>
       </div>
