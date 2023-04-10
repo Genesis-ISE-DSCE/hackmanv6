@@ -1,21 +1,15 @@
 import eva_lightleft from "../assets/images/eva_lightbgleft.png";
 import eva_lightright from "../assets/images/eva_lightbgright.png";
-import {useNavigate} from 'react-router-dom';
 
 function Registeration() {
-    const navigate = useNavigate();
-    const navigateToNextPage = () => {
-        navigate('/Registration2');
-    };
     return (
-        <div className="bg-[#24263B] pt-12 min-h-screen">
+        <div className="bg-[#24263B] pt-12">
             <div>
                 <img className="lg:float-left lg:w-auto lg:h-auto md:float-left md:w-40 md:h-auto float-left w-20 h-auto" src={eva_lightleft} alt="Registration eva" />
                 <img className="lg:float-right lg:w-auto lg:h-auto md:float-right md:w-40 md:h-auto float-right w-20 h-auto" src={eva_lightright} alt="Registration eva" />
             </div>
             <div className="lg:text-6xl lg:pt-28 md:text-4xl md:pt-16 text-[#22C3FF] pt-12 text-center font-poppins font-bold text-3xl">REGISTER</div>
             <div className="lg:text-xl lg:pt-2 md:text-md md:pt-2 text-center text-[#ffffff] pt-2  font-poppins font-semibold">Basic Details</div>
-
 
             <form className="lg:w-full md:w-full w-full">
                 <div className="lg:mx-96 md:mx-48 mx-8">
@@ -55,19 +49,7 @@ function Registeration() {
                     </div>
                 </div>
                 </div>
-                
-                <div className="">
-                    <div className="flex justify-center">
-                    <button onClick={navigateToNextPage} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#ae40fe] hover:text-white focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
-                        Next
-                    </button>
-                    </div>
-                </div>
-
             </form>
-
-
-
         </div>
     );
 }
