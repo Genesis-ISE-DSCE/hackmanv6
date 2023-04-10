@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -61,4 +61,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar
+export default Navbar;
