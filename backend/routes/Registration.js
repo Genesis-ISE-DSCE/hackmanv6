@@ -3,9 +3,9 @@ const router = express.Router();
 const registrationController = require('../controllers/Registration');
 
 // GET all registrations
-router.get('/', registrationController.getRegistrations);
+router.get('/registration', registrationController.getRegistrations);
 
 // POST new registration
-router.post('/', registrationController.register);
+router.post('/registration', registrationController.register);
 
 module.exports = router;
