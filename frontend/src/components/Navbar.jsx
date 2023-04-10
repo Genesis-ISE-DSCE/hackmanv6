@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -42,7 +42,7 @@ const Navbar = () => {
             </button>
 
             {/* Navigation elements inside dropdown menu */}
-            <div className={`${isOpen ? "block" : "hidden"} lg:hidden absolute top-10 left-0 right-0 bg-[#23354E] text-center rounded-lg pb-4`}>
+            <div className={`${isOpen ? "block" : "hidden"} lg:hidden absolute top-10 left-0 right-0 bg-[#23354E] text-center pb-4`}>
 
                 <a href="#" className="block text-[#E5F2FF] font-bold text-sm text-2xl mb-1" onClick={() => { setIsOpen(!isOpen); }} >Home</a>
                 <a href="#themes" className="block text-[#E5F2FF] font-bold text-sm mb-1" onClick={() => { setIsOpen(!isOpen); }} >Themes</a>
@@ -61,4 +61,4 @@ const Navbar = () => {
     );
 }
 
-export default Navbar;
+export default Navbar
