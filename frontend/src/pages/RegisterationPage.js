@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';
 import Registeration2 from '../components/Registeration2';
+import Navbar from '../components/Navbar';
 
 function RegisterationPage() {
   const [page, setPage] = useState(0);
@@ -60,6 +61,7 @@ function RegisterationPage() {
 
     return (
       <div>
+        <Navbar currentPage='registration'/>
         {PageDisplay(page)}
         <div className='bg-[#24263B] lg:pb-80 md:pb-16 pb-56'>{ButtonDisplay(page)}</div>
       </div>
