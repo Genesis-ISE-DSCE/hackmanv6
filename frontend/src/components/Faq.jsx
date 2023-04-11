@@ -1,6 +1,6 @@
 function Faq() {
     return (
-        <div id="faq">Faq</div>
+        <div id ="faq">Faq</div>
     );
 }
 
