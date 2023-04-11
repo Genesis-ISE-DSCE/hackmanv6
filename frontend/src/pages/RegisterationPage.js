@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';
 import Registeration2 from '../components/Registeration2';
 
@@ -44,7 +45,10 @@ function RegisterationPage() {
   const PageDisplay = () => {
     if (page === 0){
       return (
-        <Registeration />
+        <div>
+          <Navbar />
+          <Registeration />
+        </div>
       );
     }
     else {
