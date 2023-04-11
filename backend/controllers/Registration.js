@@ -1,7 +1,7 @@
 // business logic
 const Registration = require('../models/Registration');
 
-const register = (req, res) => {
+const register = async(req, res) => {
   const teamMembers = req.body.teamMembers.split(',');
   const newRegistration = new Registration({
     name: req.body.name,
@@ -13,15 +13,8 @@ const register = (req, res) => {
     theme: req.body.theme
   });
 
-  newRegistration.save((err, registration) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send('Error registering new user, please try again.');
-    } else {
-      console.log(registration);
-      res.send('Registration successful!');
-    }
-  });
+  await Registration.create(newRegistration)
+  res.json({newRegistration})
 };
 
 

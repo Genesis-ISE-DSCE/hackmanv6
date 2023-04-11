@@ -24,11 +24,12 @@ const RegistrationSchema = new Schema({
     type: String,
     required: true
   },
-  teamMembers: {
-    type: [String],
-    maxlength: 4,
-    required: true
-  },
+  teamMembers: [
+    {
+      type: String,
+      // maxlength: 4,
+      required: true
+    }],
   theme: {
     type: String,
     required: true

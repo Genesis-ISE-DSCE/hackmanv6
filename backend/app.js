@@ -11,7 +11,8 @@ const app = express();
 // regular middlewares
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
-
+const registration = require('./routes/Registration')
+app.use('/api/v1',registration)
 app.use(cookieParser());
 
 
