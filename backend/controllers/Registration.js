@@ -1,37 +1,40 @@
-// business logic
 const Registration = require('../models/Registration');
 
-const register = async(req, res) => {
-  const teamMembers = req.body.teamMembers.split(',');
-  const newRegistration = new Registration({
-    name: req.body.name,
-    email: req.body.email,
-    phone: req.body.phone,
-    college: req.body.college,
-    teamName: req.body.teamName,
-    teamMembers: teamMembers,
-    theme: req.body.theme
-  });
+exports.createRegistration = async (req, res) => {
+  const { name, email, phone, college, teamName, teamMembers, theme } = req.body;
 
-  await Registration.create(newRegistration)
-  res.json({newRegistration})
+  // Generate uniqueId using current timestamp
+  const uniqueId = `hackman${Date.now()}`;
+
+  // Convert teamMembers string to array
+  const teamMembersArray = teamMembers.split(',').map((member) => member.trim());
+
+  try {
+    const registration = new Registration({
+      uniqueId,
+      name,
+      email,
+      phone,
+      college,
+      teamName,
+      teamMembers: teamMembersArray,
+      theme
+    });
+
+    await registration.save();
+    res.status(201).json({ message: 'Registration created successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
 };
 
-
-// A method to retrieve all the done registrations 
-
-const getRegistrations = (req, res) => {
-  Registration.find({}, (err, registrations) => {
-    if (err) {
-      console.log(err);
-      res.status(500).send('Error retrieving registrations.');
-    } else {
-      res.json(registrations);
-    }
-  });
-};
-
-module.exports = {
-  register,
-  getRegistrations
+exports.getAllRegistrations = async (req, res) => {
+  try {
+    const registrations = await Registration.find();
+    res.json(registrations);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
 };
