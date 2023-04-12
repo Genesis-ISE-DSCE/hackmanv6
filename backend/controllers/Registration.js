@@ -10,7 +10,7 @@ exports.createRegistration = async (req, res) => {
   const teamMembersArray = teamMembers.split(',').map((member) => member.trim());
 
   try {
-    const registration = new Registration({
+    await Registration.create({
       uniqueId,
       name,
       email,
@@ -21,13 +21,14 @@ exports.createRegistration = async (req, res) => {
       theme
     });
 
-    await registration.save();
+    
     res.status(201).json({ message: 'Registration created successfully' });
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error' });
   }
 };
+
 
 exports.getAllRegistrations = async (req, res) => {
   try {
