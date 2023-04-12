@@ -43,7 +43,7 @@ function Registration2() {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Team Name :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-team-name" type="text" placeholder="Enter Your Team Name"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" type="text" placeholder="Enter Your Team Name"></input>
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ function Registration2() {
                     </div>
                     {[...Array(numInputs)].map((_, index) => (
                         <div className="pt-2">
-                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500 h-10 p-2" key={index} id="inline-team-member" type="text" placeholder="Team Member Name" />
+                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" key={index} id="inline-team-member" type="text" placeholder="Team Member Name" />
                         </div>
                     ))}
                     {AddButtonDisplay(numInputs)}
@@ -64,7 +64,7 @@ function Registration2() {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Theme :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="inline-college-name" type="text" placeholder="Select Theme"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-college-name" type="text" placeholder="Select Theme"></input>
                     </div>
                 </div>
                 </div>
