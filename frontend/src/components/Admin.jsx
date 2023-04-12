@@ -4,12 +4,16 @@ function Admin() {
     return (
         <div className="login-page h-screen w-screen">
 
-            <a href="/"><img src={require('../assets/images/hackman_logo.png')} alt="Logo" className="fixed top-3.5 px-5 py-1 h-6 lg:top-2.5 lg:h-9 lg:py-1 md:h-9 md:py-1 ml-1" /></a>
+            {/* background image */}
+            <a href="/"><img src={require('../assets/images/hackman_logo.png')} alt="Logo" className="fixed top-3 px-5 py-1 h-6 lg:top-2.5 lg:h-9 lg:py-1 md:h-9 md:py-1 ml-1" /></a>
 
+            {/* Center block containing eva and login */}
             <div className="flex items-center justify-center h-screen w-screen">
                 
+                {/* Lefgt side image of Eva */}
                 <img src={require('../assets/images/eva_login.jpg')} alt="Eva" className="hidden lg:block bg-[#252736] w-2/5 h-4/5" />
 
+                {/* Form elements on the right side */}
                 <form className="bg-[#27273F] lg:w-2/5 lg:h-4/5 md:w-3/5 md:h-3/5 w-3/4 h-3/5">
 
                     <div className="flex flex-col items-center justify-center mt-100 mb-100 lg:mt-100 lg:mb-100 md:mt-100 md:mb-100 h-4/5 md:h-4/5 lg:h-4/5">

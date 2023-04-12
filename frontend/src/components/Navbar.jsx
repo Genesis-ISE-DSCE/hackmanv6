@@ -12,7 +12,7 @@ const Navbar = (props) => {
     // };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5 py-1 lg:py-1 h-14 lg:h-15 md:h-15 flex justify-between items-center z-10">
+        <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5 py-1 lg:py-1 h-8.2 lg:h-18 md:h-17 flex justify-between items-center z-10">
             
             {/* Logo in navbar */}
             <a href="/"><img src={require('../assets/images/hackman_logo.png')} alt="Logo" className="h-4 md:h-7 lg:h-7 mt-2 mb-2 ml-1" /></a>
@@ -39,11 +39,11 @@ const Navbar = (props) => {
             {/* Drop down menu */}
             {/* Menu button for small and medium screen */}
             {props.currentPage === 'landing' && <button className="focus:outline-none lg:hidden" onClick={() => setIsOpen(!isOpen)}>
-                <img src={require('../assets/images/Menu.png')} alt="Menu" className="h-8 md:h-8 right-0" color='#D4DFC7' />
+                <img src={require('../assets/images/Menu.png')} alt="Menu" className="h-7 md:h-8 right-0" color='#D4DFC7' />
             </button>}
 
             {/* Navigation elements inside dropdown menu */}
-            <div className={`${isOpen ? "block" : "hidden"} lg:hidden absolute top-10 left-0 right-0 bg-[#23354E] text-center pb-4`}>
+            <div className={`${isOpen ? "block" : "hidden"} lg:hidden absolute top-8 md:top-10 left-0 right-0 bg-[#23354E] text-center pb-4`}>
 
                 {props.currentPage === 'landing' && <a href="/" className="block text-[#22C3FF] font-bold text-base text-2xl mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Home</a>}
                 {props.currentPage === 'landing' && <a href="/#themes" className="block text-[#22C3FF] font-bold text-base mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Themes</a>}
