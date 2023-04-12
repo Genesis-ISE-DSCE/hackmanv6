@@ -20,7 +20,7 @@ function Counter(props) {
     const seconds = Math.floor(countdown % 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
     return(
-        <div id="landing" className="bg-[#27273F] lg:pb-36 lg:pt-8 md:pb-8 md:pt-8 pb-8">
+        <div id="landing" className="bg-[#24263B] lg:pb-36 lg:pt-8 md:pb-8 md:pt-8 pb-8">
             <section>
                 <div className="lg:items-center lg:justify-center md:items-center md:justify-center items-center justify-center">
                     <div className="lg:items-center lg:justify-center md:items-center md:justify-center items-center justify-center" style={{ position: "relative", top: "-30px" }}>
