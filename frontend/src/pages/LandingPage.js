@@ -25,10 +25,10 @@ function LandingPage() {
       <Counter initialCountdown={initialCountdown} />
       <About />
       <Timeline />
-      <Themes />
-      <Sponsors />
+      {/* <Themes /> */}
+      {/* <Sponsors /> */}
       <Faq />
-      <Organisers />
+      {/* <Organisers /> */}
       <Footer />
     </div>
   );

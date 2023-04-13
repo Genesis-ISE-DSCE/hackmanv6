@@ -7,7 +7,7 @@ const Faq = () => {
   // Array of FAQ questions and answers
   const faqList = [
     {
-      question: 'Who can attend Hackman v6.0',
+      question: 'Who can attend Hackman v6.0?',
       answer: 'The only restriction is that you must be a student! You should have a valid current University / College ID. Build your team and register.'
     },
     {
@@ -42,8 +42,9 @@ const Faq = () => {
   };
 
   return (
-    <div className="faq-section">
-      <h1 className="faq-section-title">Frequently Asked Questions</h1>
+    <div id="sponsors" className="bg-[#24263B] pt-12 pb-16">
+    <div className="lg:text-6xl lg:pb-12 md:text-4xl md:pb-4 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">FAQ's</div>
+    <div className="faq-section lg:mx-12 md:mx-8 mx-4 text-6xl">
       {faqList.map((faq, index) => (
         <div key={index} className="faq-question">
           <button onClick={() => toggleExpand(index)} className="faq-question-button">
@@ -53,6 +54,7 @@ const Faq = () => {
           {expanded[index] && <p className="faq-answer">{faq.answer}</p>}
         </div>
       ))}
+    </div>
     </div>
   );
 };

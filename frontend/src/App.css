@@ -39,20 +39,10 @@
 
 
 .faq-section {
-  max-width: 960px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
-
-.faq-section-title {
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 30px;
-  font-size: 32px;
-  font-weight: bold;
-  color: #23354E;
 }
 
 .faq-question {
@@ -66,9 +56,8 @@
   }
 }
 
-  
 .faq-question-button {
-  background-color: #22C3FF;
+  background-color: #23354E;
   color: #ffffff;
   width: 100%;
   text-align: left;
@@ -86,7 +75,7 @@
 }
 
 .faq-question-button:hover {
-  background-color: #23354E;
+  background-color: #22C3FF;
 }
 
 .faq-question-button:active {
