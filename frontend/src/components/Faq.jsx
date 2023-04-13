@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import dropdown from '../assets/images/dropdown.png';
 import '../App.css';
+
 const Faq = () => {
   // State to keep track of the expanded/collapsed state of each question
   const [expanded, setExpanded] = useState(false);
@@ -49,6 +51,7 @@ const Faq = () => {
         <div key={index} className="faq-question">
           <button onClick={() => toggleExpand(index)} className="faq-question-button">
             {faq.question}
+            <img className="w-4" src={dropdown} alt="Drop down" />
             {expanded[index]}
           </button>
           {expanded[index] && <p className="faq-answer">{faq.answer}</p>}
