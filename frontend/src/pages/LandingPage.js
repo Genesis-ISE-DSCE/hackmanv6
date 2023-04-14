@@ -5,9 +5,9 @@ import Faq from '../components/Faq';
 import Footer from '../components/Footer';
 import Landing from '../components/Landing';
 import Navbar from '../components/Navbar';
-import Organisers from '../components/Organisers';
-import Sponsors from '../components/Sponsors';
-import Themes from '../components/Themes';
+// import Organisers from '../components/Organisers';
+// import Sponsors from '../components/Sponsors';
+// import Themes from '../components/Themes';
 import Timeline from '../components/Timeline';
 
 function LandingPage() {
@@ -25,10 +25,10 @@ function LandingPage() {
       <Counter initialCountdown={initialCountdown} />
       <About />
       <Timeline />
-      <Themes />
-      <Sponsors />
+      {/* <Themes /> */}
+      {/* <Sponsors /> */}
       <Faq />
-      <Organisers />
+      {/* <Organisers /> */}
       <Footer />
     </div>
   );
