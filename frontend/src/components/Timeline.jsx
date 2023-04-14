@@ -36,12 +36,40 @@ const Timeline = () => {
         <div className="absolute top-1/4 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-1/4 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
         <div className="absolute top-1/2 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-1/2 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
         <div className="absolute top-3/4 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-3/4 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
+        <div className="absolute h-full border-2 border-[#22C3FF] left-1/2 transform -translate-x-1/2"></div>
+
+        {/* Timeline for small and medium devices */}
+        <div className="max-w-xl mx-auto lg:hidden">
+          {events.map((event, index) => (
+            <div key={event.id} className="mb-8 relative bg-[#23354E] rounded-lg ml-5">
+              <div className="flex items-center mb-4">
+
+                <div className="relative px-6 py-4">
+
+                  <p className="lg:text-3xl lg:pt-2 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
+                  <p className="lg:text-xl lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
+                  <a
+                    href={event.link}
+                    className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#24263B]"
+                  >
+                    Link
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          ))}
+        </div>
 
         {/* Event boxes */}
         {events.map((event, index) => (
-          <div key={index} className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"} mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/5 ml-50`}>
+          <div
+            key={index}
+            className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
+              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/5 ml-30 hidden lg:block`}
+          >
             <div className="relative px-6 py-4">
-              
+
               <p className="lg:text-3xl lg:pt-2 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
               <p className="lg:text-xl lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
               <a href={event.link} className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#D4DFC7]">
