@@ -51,7 +51,7 @@ const Faq = () => {
         <div key={index} className="faq-question">
           <button onClick={() => toggleExpand(index)} className="faq-question-button">
             {faq.question}
-            <img className="w-4" src={dropdown} alt="Drop down" />
+            <img className="w-4 ml-2" src={dropdown} alt="Drop down" />
             {expanded[index]}
           </button>
           {expanded[index] && <p className="faq-answer">{faq.answer}</p>}
