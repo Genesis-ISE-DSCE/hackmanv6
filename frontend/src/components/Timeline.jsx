@@ -25,7 +25,7 @@ const Timeline = () => {
   ];
 
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-[#24263B] pt-12 pb-16">
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-8 pb-2">
       <h1 className="lg:text-6xl lg:pb-16 md:text-4xl md:pb-6 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">EVENT TIMELINE</h1>
       <div className="relative">
         {/* Vertical line */}
