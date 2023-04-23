@@ -18,7 +18,7 @@ function Registeration() {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Name :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-name" type="text" placeholder="Enter your name"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-white leading-tight focus:outline-none focus:border-[#22C3FF]-500" id="inline-name" type="text" placeholder="Enter your name"></input>
                     </div>
                 </div>
 
@@ -27,7 +27,7 @@ function Registeration() {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Email :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" id="inline-email" type="mail" placeholder="Enter your email"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-white leading-tight focus:outline-none focus:border-[#22C3FF]-500 h-10 p-2" id="inline-email" type="mail" placeholder="Enter your email"></input>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@ function Registeration() {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Phone :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-full-name" type="tel" placeholder="Enter your phone number"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-white leading-tight focus:outline-none focus:border-[#22C3FF]-500" id="inline-full-name" type="tel" placeholder="Enter your phone number"></input>
                     </div>
                 </div>
                 
@@ -45,7 +45,7 @@ function Registeration() {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">College :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-full-name" type="text" placeholder="Enter your college name"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded text-white leading-tight focus:outline-none focus:border-[#22C3FF]-500" id="inline-full-name" type="text" placeholder="Enter your college name"></input>
                     </div>
                 </div>
                 </div>
