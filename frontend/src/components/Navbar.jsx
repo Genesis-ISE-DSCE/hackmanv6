@@ -45,7 +45,7 @@ const Navbar = (props) => {
             {/* Navigation elements inside dropdown menu */}
             <div className={`${isOpen ? "block" : "hidden"} lg:hidden absolute top-8 md:top-10 left-0 right-0 bg-[#23354E] text-center pb-4`}>
 
-                {props.currentPage === 'landing' && <a href="/" className="block text-[#22C3FF] font-bold text-base text-2xl mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Home</a>}
+                {props.currentPage === 'landing' && <a href="/" className="block text-[#22C3FF] font-bold text-2xl mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Home</a>}
                 {props.currentPage === 'landing' && <a href="/#themes" className="block text-[#22C3FF] font-bold text-base mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Themes</a>}
                 {props.currentPage === 'landing' && <a href="/#schedule" className="block text-[#22C3FF] font-bold text-base mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Schedule</a>}
                 {props.currentPage === 'landing' && <a href="/#sponsors" className="block text-[#22C3FF] font-bold text-base mb-1 hover:text-[#D4DFC7]" onClick={() => { setIsOpen(!isOpen); }} >Sponsors</a>}
