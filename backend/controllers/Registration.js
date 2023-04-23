@@ -25,7 +25,7 @@ exports.createRegistration = async (req, res) => {
     res.status(201).json({ message: 'Registration created successfully', registeration});
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error' ,err:err});
   }
 };
 
@@ -36,6 +36,6 @@ exports.getAllRegistrations = async (req, res) => {
     res.json(registrations);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' });
+    res.status(500).json({ message: 'Server error', err:err });
   }
 };
