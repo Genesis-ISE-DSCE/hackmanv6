@@ -4,25 +4,25 @@ exports.createRegistration = async (req, res) => {
   const { name, email, phone, college, teamName, teamMembers, theme } = req.body;
 
   // Generate uniqueId using current timestamp
-  const uniqueId = `hackman${Date.now()}`;
+  const teamId = `hackman${Date.now()}`;
 
   // Convert teamMembers string to array
-  const teamMembersArray = teamMembers.split(',').map((member) => member.trim());
+  // const teamMembersArray = teamMembers.split(',').map((member) => member.trim());
 
   try {
-    await Registration.create({
-      uniqueId,
+   const registeration= await Registration.create({
+      teamId,
       name,
       email,
       phone,
       college,
       teamName,
-      teamMembers: teamMembersArray,
+      teamMembers,
       theme
     });
 
     
-    res.status(201).json({ message: 'Registration created successfully' });
+    res.status(201).json({ message: 'Registration created successfully', registeration});
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Server error' });

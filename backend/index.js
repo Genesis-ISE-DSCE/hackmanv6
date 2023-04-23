@@ -1,3 +1,3 @@
 const app = require("./app");
 
-app.listen(3000,()=>{console.log(`App is running at port 3000`)})
+app.listen(process.env.PORT,()=>{console.log(`App is running at port ${process.env.PORT}`)})
