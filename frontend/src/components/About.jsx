@@ -11,7 +11,7 @@ function About() {
                 <div className="text-[#ffffff] text-justify lg:text-xl md:text-lg text-sm">HackMan v.6 is an Inter College, extravagant 24-hours Hackathon, hosted by the Department of ISE, Dayananda Sagar College of Engineering (DSCE), Bangalore. We give the brightest of minds a chance to brainstorm as a team and come up with unique solutions, code it out and solve some of the pressing problems of our society. Over the first 4 versions we have seen some brilliant projects and we challenge you to top them off with your Out-of-the-box ideas. “You can't solve a problem on the same level that it was created. You have to rise above it to the next level.”</div>
                 <div className="lg:flex lg:justify-center lg:float-left lg:pt-8 md:flex md:justify-center md:float-left md:pt-8 flex justify-center float-left pt-6">
                     <Link to={"/registeration"} className="lg:text-3xl shadow bg-[#D4DFC7] hover:bg-[#22C3FF] hover:text-white focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded-lg text-sm" type="button">
-                        REGISTER
+                        Register
                     </Link>              
                 </div>
             </div>
