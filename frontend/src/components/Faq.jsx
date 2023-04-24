@@ -63,7 +63,7 @@ const Faq = () => {
       answer: 'You should bring your laptop, any necessary chargers or accessories, and any other tools or resources you may need to work on your project. Optionally, you may also want to bring a change of clothes, toiletries, and any snacks or drinks you prefer.'    
     },
     {
-      question:  'Do I need to have programming experience to participate in this hackathon?',
+      question:  'Do I need to have programming experience to participate?',
       answer: 'While programming experience is certainly helpful, it is not always required to participate in HACKMAN. We also welcome designers, data scientists, and other tech enthusiasts who can contribute to the development of a project in other ways.'    
     },
     {
@@ -83,7 +83,7 @@ const Faq = () => {
   return (
     <div id="sponsors" className="bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-4 pb-4">
     <div className="lg:text-6xl lg:pb-12 md:text-4xl md:pb-4 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">FAQ's</div>
-    <div className="faq-section lg:mx-12 md:mx-8 mx-4 text-6xl">
+    <div className="faq-section lg:mx-20 md:mx-8 mx-4 text-6xl">
       {faqList.map((faq, index) => (
         <div key={index} className="faq-question">
           <button onClick={() => toggleExpand(index)} className="faq-question-button">
