@@ -66,7 +66,7 @@ const Timeline = () => {
           <div
             key={index}
             className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
-              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/5 ml-30 hidden lg:block`}
+              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/5 ml-30 hidden lg:block pt-2 ml-12 mr-12`}
           >
             <div className="relative px-6 py-4">
 
