@@ -1,17 +1,17 @@
 import React from 'react'
 
 function Landing() {
-    return (
-        <div id="landing" className="h-screen">
-            <section className="bg-[#27273F] h-screen">
-                <div className="items-center justify-center h-screen">
-                    <div className="items-center justify-center relative h-screen">
-                        <img className="w-full h-full object-cover object-top" alt="Poster1" src={require('../assets/images/eva_main.png')} />
-                    </div>
-                </div>
-            </section>
+  return (
+    <div id="landing">
+      <section className="bg-[#27273F]">
+        <div className="items-center justify-center">
+          <div className="items-center justify-center relative">
+            <img className="w-full" alt="Poster1" src={require('../assets/images/eva_main.png')} />
+          </div>
         </div>
-    );
+      </section>
+    </div>
+  );
 }
 
 export default Landing;
