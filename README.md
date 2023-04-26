@@ -78,8 +78,8 @@ npm start
 
 ## Screenshots 
 
-![App Screenshot](https://github.com/Janesh7/hackmanv6/tree/main/frontend/src/assets/images/ss1.png?raw=true)
-![App Screenshot](https://github.com/Janesh7/hackmanv6/tree/main/frontend/src/assets/images/ss2.png?raw=true)
+![App Screenshot](https://github.com/Janesh7/hackmanv6/main/frontend/src/assets/images/ss1.png?raw=true)
+![App Screenshot](https://github.com/Janesh7/hackmanv6/main/frontend/src/assets/images/ss2.png?raw=true)
 
 
 ## How to contribute
