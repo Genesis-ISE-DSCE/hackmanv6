@@ -62,15 +62,15 @@ function Footer() {
                     </div>
                     <div class="lg:w-1/3 md:w-1/2 w-full px-4">
                         <h2 class="font-poppins text-white text-xl font-bold tracking-widest text-sm mb-2">Follow Us On Socials</h2>
-                        <div className="flex justify-center sm:justify-start text-[#D4DFC7]">
+                        <div className="flex justify-center sm:justify-start text-white ">
                             <div className="">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faLinkedin} className='lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faLinkedin} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
                             </div>
                             <div className="ml-8 insta">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faInstagram} className='lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faInstagram} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
                             </div>
                             <div className="ml-8 mb-10">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faFacebook} className='lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faFacebook} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
                             </div>
                         </div>
                     </div>
