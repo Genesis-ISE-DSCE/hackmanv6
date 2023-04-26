@@ -78,5 +78,26 @@ npm start
 
 ## Screenshots 
 
-![App Screenshot](https://github.com/Janesh7/hackmanv6/blob/readme/src/assets/ss1.png?raw=true)
-![App Screenshot](https://github.com/Janesh7/hackmanv6/blob/readme/src/assets/ss2.png?raw=true)
+![App Screenshot](https://github.com/Janesh7/hackmanv6/tree/Readme/frontend/src/assets/images/ss1.png?raw=true)
+![App Screenshot](https://github.com/Janesh7/hackmanv6/tree/Readme/frontend/src/assets/images/ss2.png?raw=true)
+
+
+## How to contribute
+
+- Git clone
+```
+git clone https://github.com/Hackman-Genesis/hackmanv6
+```
+
+- Start working and create a pull request 
+
+**OR**
+
+- Fork the repo
+- Start working and create a pull request 
+
+
+**IMP NOTE: Only the pull requests which are opened strictly based on the rules will be merged!!**
+
+
+Happy Coding!! :partying_face:
