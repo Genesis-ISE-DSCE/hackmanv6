@@ -16,7 +16,8 @@ HackMan v.6 is an Inter College, extravagant 24-hours Hackathon, hosted by the D
 **“You can't solve a problem on the same level that it was created. You have to rise above it to the next level.”**
 
 
-
+<br />
+<br />
 Figma design Link:
 
 
@@ -31,4 +32,51 @@ Figma design Link:
 
 **Backend: ExpressJS, NodeJS**
 
-![My Skills](https://skills.thijs.gg/icons?i=react,tailwind,node,express)
+![My Skills](https://skills.thijs.gg/icons?i=react,tailwind,nodejs,express)
+
+
+
+## Run Locally
+
+- Clone the repository
+```
+git clone https://github.com/Hackman-Genesis/hackmanv6
+```
+
+- Change directory to the cloned folder
+
+```
+cd hackmanv6
+```
+
+
+**Frontend**
+
+- Change directory to frontend folder
+```
+cd frontend
+```
+
+- Start the app
+```
+npm start
+```
+
+
+**Backend**
+
+- Change directory to backend folder
+```
+cd backend
+```
+
+- Start the app
+```
+npm start
+```
+
+
+## Screenshots 
+
+![App Screenshot](https://github.com/Janesh7/hackmanv6/blob/readme/src/assets/ss1.png?raw=true)
+![App Screenshot](https://github.com/Janesh7/hackmanv6/blob/readme/src/assets/ss2.png?raw=true)
