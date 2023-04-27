@@ -24,7 +24,7 @@ function Counter(props) {
             <section>
                 <div className="lg:items-center lg:justify-center md:items-center md:justify-center items-center justify-center">
                     <div className="lg:items-center lg:justify-center md:items-center md:justify-center items-center justify-center" style={{ position: "relative", top: "-30px" }}>
-                        <img className="lg:pt-24 lg:pb-8 lg:w-auto md:pt-24 md:pb-8 md:w-auto pt-16 w-auto px-8 mx-auto" alt="Poster1" src={require('../assets/images/hackman_logo.png')} />
+                        <img className="lg:pt-24 lg:pb-8 md:pt-24 md:pb-8 w-1/2 pt-16 px-8 mx-auto" alt="Poster1" src={require('../assets/images/hackman_logo.png')} />
                     </div>
                     <div>
                         <img className="lg:float-left lg:ml-48 lg:w-[15%] md:float-left md:ml-8 md:w-[10%] float-left w-24" src={eva_bg_small_lef} alt="Registration eva" />
