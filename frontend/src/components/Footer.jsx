@@ -1,6 +1,6 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { Linkedin, Twitter, Instagram } from 'react-feather'
+import { Linkedin, Instagram, Facebook } from 'react-feather'
 import '../index.css';
 
 function Footer() {
@@ -47,35 +47,38 @@ function Footer() {
     // );
     return (
         <footer class="bg-[#23354E]">
-            <div class="container px-3 py-12 mx-auto">
+            <div class="container px-3 pt-8 mx-auto">
                 <div class="flex flex-wrap md:text-left text-center order-first">
-                    <div class="lg:w-1/3 md:w-1/2 w-full px-4">
-                        <h2 class="font-poppins text-white text-xl font-bold tracking-widest text-sm mb-2">Student Coordinators</h2>
+                    <div class="lg:w-1/3 md:w-1/2 w-full px-4 py-0">
+                        <h2 class="font-poppins text-white text-xl font-bold tracking-widest mb-2">Student Coordinators</h2>
                         <div class="list-none mb-10">
                             <li>
-                                <p class="text-white hover:text-[#22C3FF]">Pankaj Garg - 4512561285</p>
+                                <p class="text-white hover:text-[#22C3FF]">Pankaj Garg - <a href="tel:">+911234567890</a></p>
                             </li>
                             <li>
-                                <p class="text-white hover:text-[#22C3FF]">Ananya Bhat - 45895623</p>
+                                <p class="text-white hover:text-[#22C3FF]">Ananya Bhat - <a href="tel:">+911234567890</a></p>
+                            </li>
+                            <li>
+                                <p class="text-white hover:text-[#22C3FF]">Mail - <a href="mailto:">genesis.hackman@gmail.com</a></p>
                             </li>
                         </div>
                     </div>
-                    <div class="lg:w-1/3 md:w-1/2 w-full px-4">
-                        <h2 class="font-poppins text-white text-xl font-bold tracking-widest text-sm mb-2">Follow Us On Socials</h2>
+                    <div class="lg:w-1/3 md:w-1/2 w-full px-4 py-0">
+                        <h2 class="font-poppins text-white text-xl font-bold tracking-widest mb-2">Follow Us On Socials</h2>
                         <div className="flex justify-center sm:justify-start text-white ">
                             <div className="">
                                 <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Linkedin size= {35} className='hover:text-[#22C3FF] lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl' /></a>
                             </div>
                             <div className="ml-8 insta">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Twitter size= {35} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'/></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Facebook size= {35} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'/></a>
                             </div>
                             <div className="ml-8 mb-10">
                                 <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Instagram size= {35} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'/></a>
                             </div>
                         </div>
                     </div>
-                    <div class="lg:w-1/3 md:w-1/2 w-full px-4">
-                        <p class="font-poppins text-[#22C3FF] tracking-widest cursor-pointer text-sm mt-2 mb-2">Privacy Policy | Terms & condition</p>
+                    <div class="lg:w-1/3 md:w-1/2 w-full px-4 py-0">
+                        <p class="font-poppins text-[#22C3FF] tracking-widest cursor-pointer text-sm mt-2 mb-2"><a href="#/" rel='noreferrer noopener' target="_blank" className='hover:text-green-300'>Privacy Policy</a> | <a href="#/" rel='noreferrer noopener' target="_blank" className='hover:text-green-300'>Terms & Conditions</a></p>
                         <p class="font-poppins text-white tracking-widest text-sm mb-2">© 2023 Hackman. All rights Reserved ️</p>
                     </div>
 
@@ -84,7 +87,7 @@ function Footer() {
                 </div>
             </div>
             <div className='bg-[#24263B] pt-1 pb-1'>
-                <p className='font-poppins text-center text-white text-xl tarcking-widest text-sm mt-2 mb-2'>Made by team genesis by ❤️</p>
+                <p className='font-poppins text-center text-white text-xl tarcking-widest mt-2 mb-2'>Made by team Genesis with ❤️</p>
             </div>
         </footer>
     );

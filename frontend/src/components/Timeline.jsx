@@ -66,14 +66,14 @@ const Timeline = () => {
           <div
             key={index}
             className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
-              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/6 ml-30 hidden lg:block pt-2 ml-12 mr-12`}
+              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-1/4 ml-60 hidden lg:block pt-2 ml-12 mr-12`}
           >
             <div className="relative px-6 py-4">
 
               <p className="lg:text-3xl lg:pt-2 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
               <p className="lg:text-xl lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
               <a href={event.link} className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#D4DFC7]">
-                Link
+                Link &gt;
               </a>
             </div>
           </div>
