@@ -39,9 +39,9 @@ const Timeline = () => {
         <div className="absolute h-full border-2 border-[#22C3FF] left-1/2 transform -translate-x-1/2"></div>
 
         {/* Timeline for small and medium devices */}
-        <div className="max-w-xl mx-auto lg:hidden">
+        <div className="max-w-xl mx-auto flex flex-col items-center lg:hidden">
           {events.map((event, index) => (
-            <div key={event.id} className="mb-8 relative bg-[#23354E] rounded-lg mx-8">
+            <div key={event.id} className="mb-8 relative bg-[#23354E] rounded-lg mx-8 sm:w-1/2 w-60">
               <div className="flex items-center mb-4">
 
                 <div className="relative px-6 w-full text-center py-4">
@@ -66,7 +66,7 @@ const Timeline = () => {
           <div
             key={index}
             className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
-              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/5 ml-30 hidden lg:block pt-2 ml-12 mr-12`}
+              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/6 ml-30 hidden lg:block pt-2 ml-12 mr-12`}
           >
             <div className="relative px-6 py-4">
 
