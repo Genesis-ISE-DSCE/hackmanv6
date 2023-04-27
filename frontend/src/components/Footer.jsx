@@ -1,6 +1,6 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Linkedin, Twitter, Instagram } from 'react-feather'
 import '../index.css';
 
 function Footer() {
@@ -47,7 +47,7 @@ function Footer() {
     // );
     return (
         <footer class="bg-[#23354E]">
-            <div class="container px-5 py-24 mx-auto">
+            <div class="container px-3 py-12 mx-auto">
                 <div class="flex flex-wrap md:text-left text-center order-first">
                     <div class="lg:w-1/3 md:w-1/2 w-full px-4">
                         <h2 class="font-poppins text-white text-xl font-bold tracking-widest text-sm mb-2">Student Coordinators</h2>
@@ -64,13 +64,13 @@ function Footer() {
                         <h2 class="font-poppins text-white text-xl font-bold tracking-widest text-sm mb-2">Follow Us On Socials</h2>
                         <div className="flex justify-center sm:justify-start text-white ">
                             <div className="">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faLinkedin} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Linkedin size= {35} className='hover:text-[#22C3FF] lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl' /></a>
                             </div>
                             <div className="ml-8 insta">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faInstagram} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Twitter size= {35} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'/></a>
                             </div>
                             <div className="ml-8 mb-10">
-                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><FontAwesomeIcon icon={faFacebook} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'></FontAwesomeIcon></a>
+                                <a href="https://www.instagram.com/wearehackman/" rel='noreferrer noopener' target="_blank"><Instagram size= {35} className='hover:text-[#22C3FF] lg:text-5xl lg:hover:scale-125 md:text-5xl md:hover:scale-125 text-3xl'/></a>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@ function Footer() {
 
                 </div>
             </div>
-            <div className='bg-[#24263B] pt-1 pb-2'>
+            <div className='bg-[#24263B] pt-1 pb-1'>
                 <p className='font-poppins text-center text-white text-xl tarcking-widest text-sm mt-2 mb-2'>Made by team genesis by ❤️</p>
             </div>
         </footer>
