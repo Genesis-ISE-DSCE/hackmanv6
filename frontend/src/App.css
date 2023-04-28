@@ -107,4 +107,22 @@
   line-height: 1.5;
 }
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  color: #fff;
+  border-radius: 4px;
+}
 
+.popup button {
+  background-color: #22C3FF;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  float: right;
+  cursor: pointer;
+  justify-content: right;
+}
