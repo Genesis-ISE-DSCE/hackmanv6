@@ -2,6 +2,8 @@
 // import { faInstagram, faFacebook, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { Linkedin, Instagram, Facebook } from 'react-feather'
 import '../index.css';
+import privacypolicy from "../assets/documents/Privacy Policy.pdf";
+import termsconditions from "../assets/documents/Terms and Conditions.pdf";
 
 function Footer() {
     // return (
@@ -78,7 +80,7 @@ function Footer() {
                         </div>
                     </div>
                     <div class="lg:w-1/3 md:w-1/1 w-full px-4 py-0">
-                        <p class="font-poppins text-[#22C3FF] tracking-widest cursor-pointer lg:text-sm md:text-sm text-xs mt-0.5 sm:mt-2 mb-1 sm:mb-2"><a href="#/" rel='noreferrer noopener' target="_blank" className='hover:text-green-300'>Privacy Policy</a> | <a href="#/" rel='noreferrer noopener' target="_blank" className='hover:text-green-300'>Terms & Conditions</a></p>
+                        <p class="font-poppins text-[#22C3FF] tracking-widest cursor-pointer lg:text-sm md:text-sm text-xs mt-0.5 sm:mt-2 mb-1 sm:mb-2"><a href={privacypolicy} rel='noreferrer noopener' target="_blank" className='hover:text-green-300'>Privacy Policy</a> | <a href={termsconditions} rel='noreferrer noopener' target="_blank" className='hover:text-green-300'>Terms & Conditions</a></p>
                         <p class="font-poppins text-white tracking-widest lg:text-sm md:text-sm text-xs mb-4">© 2023 Hackman. All rights Reserved ️</p>
                     </div>
 

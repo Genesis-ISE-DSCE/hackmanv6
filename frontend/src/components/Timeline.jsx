@@ -52,7 +52,7 @@ const Timeline = () => {
                     href={event.link}
                     className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#24263B]"
                   >
-                    Link
+                    Link &gt;
                   </a>
                 </div>
               </div>
