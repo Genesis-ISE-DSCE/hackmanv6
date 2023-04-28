@@ -95,13 +95,13 @@ function RegisterationPage() {
         {PageDisplay(page)}
         <div className='bg-[#24263B] lg:pb-80 md:pb-16 pb-56'>{ButtonDisplay(page)}</div>
         {showPopup && (
-        <div className="popup bg-[#23354E] w-[32%] pt-12 rounded-xl">
-            <img className="lg:float-left lg:w-48 lg:h-auto md:float-left md:w-40 md:h-auto float-left w-20 h-auto" src={eva_bg_small_lef} alt="Registration eva" />
+        <div className="popup bg-[#23354E] lg:w-[540px] lg:pt-12 md:w-[480px] md:pt-8 w-[320px] pt-0 rounded-xl">
+            <img className="lg:float-left lg:w-48 lg:h-auto md:float-left md:w-40 md:h-auto justify-center w-20 h-auto" src={eva_bg_small_lef} alt="Registration eva" />
           <div>
-            <p className="font-poppins text-2xl text-center">Registration Successful !!</p>
-            <p className="font-poppins text-sm text-center">Check your mail for any further updates.</p>
+            <p className="font-poppins lg:text-2xl md:text-xl text-md text-center">Registration Successful !!</p>
+            <p className="font-poppins lg:text-sm md:text-sm text-xs text-center">Check your mail for any further updates.</p>
           </div>
-          <div className='pt-20 pb-8'>
+          <div className='lg:pt-20 lg:pb-8 md:pt-16 md:pb-6 pt-2'>
             <button onClick={handleOk} className="lg:text-xl shadow hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
               OK
             </button>
