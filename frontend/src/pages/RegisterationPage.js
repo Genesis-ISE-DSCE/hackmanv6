@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import eva_bg_small_lef from "../assets/images/eva_bg_small_lef.png";
 import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';

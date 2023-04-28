@@ -5,7 +5,7 @@ const Timeline = () => {
     {
       date: "May 4th-24th",
       title: "Registration",
-      link: "https://example.com/event1",
+      link: "/registeration",
     },
     {
       date: "June 1st-5th",

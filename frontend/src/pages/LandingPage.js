@@ -3,12 +3,13 @@ import About from '../components/About';
 import Counter from '../components/Counter';
 import Faq from '../components/Faq';
 import Footer from '../components/Footer';
-import Landing from '../components/Landing';
+// import Landing from '../components/Landing';
 import Navbar from '../components/Navbar';
 // import Organisers from '../components/Organisers';
 // import Sponsors from '../components/Sponsors';
 // import Themes from '../components/Themes';
 import Timeline from '../components/Timeline';
+import '../App.css';
 
 function LandingPage() {
     const launchDate = new Date("June 4, 2023 12:00:00");
@@ -20,7 +21,8 @@ function LandingPage() {
     );
     return (
         <React.Fragment>
-            <Landing />
+            <div className="parallax"></div>
+            {/* <Landing /> */}
             <Navbar currentPage = 'landing'/>
             <Counter initialCountdown={initialCountdown} />
             <About />
@@ -30,6 +32,7 @@ function LandingPage() {
             <Faq />
             {/* <Organisers /> */}
             <Footer />
+            <div className="parallax"></div>
         </React.Fragment>
     );
 }
