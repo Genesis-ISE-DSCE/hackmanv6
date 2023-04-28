@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';
 import Registeration2 from '../components/Registeration2';
 import '../App.css';
+import Axios from "axios"
 
 function RegisterationPage() {
   const [page, setPage] = useState(0);
@@ -21,7 +22,7 @@ function RegisterationPage() {
     theme: "",
   });
 
-  function handleClick() {
+   function handleClick() {
     const regData = {
       name: formData.name,
       email: formData.email,
@@ -32,7 +33,11 @@ function RegisterationPage() {
       theme: formData.theme
     }
     console.log(regData);
-    setShowPopup(true);
+     Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
+    .then((res)=>{console.log(res)
+      setShowPopup(true)})
+    .catch((err)=>{console.log(err)})
+    
   }
 
   const handleOk = () => {
@@ -44,7 +49,9 @@ function RegisterationPage() {
       return (
         <div className="lg:mx-96 md:mx-48 mx-8">
           <div className="flex justify-center">
-            <button onClick={() => {setPage((curPage) => curPage+1);}} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="submit">
+            <button onClick={(event) => {
+              event.preventDefault()
+              setPage((curPage) => curPage+1);}} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="submit">
               Next
             </button>
           </div>
