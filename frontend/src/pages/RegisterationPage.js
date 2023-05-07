@@ -46,7 +46,6 @@ function RegisterationPage() {
     .then((res)=>{console.log(res)
       setShowPopup(true)})
     .catch((err)=>{console.log(err)})
-    setShowPopup(true)
   }
 
   function handleNext(event) {
