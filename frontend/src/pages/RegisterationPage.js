@@ -12,6 +12,7 @@ function RegisterationPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [isNext, setIsNext] = useState(false);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -34,7 +35,7 @@ function RegisterationPage() {
       teamMembers: formData.teamMembers,
       theme: formData.theme
     }
-    setFormErrors(validate(formData));
+    setFormErrors(validate2(formData));
     setIsSubmit(true);
     console.log(regData);
      Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
@@ -45,7 +46,11 @@ function RegisterationPage() {
 
   function handleNext(event) {
     event.preventDefault();
-    setPage((curPage) => curPage+1);
+    setFormErrors(validate(formData));
+    setIsNext(true);
+    if(isNext === true) {
+      setPage((curPage) => curPage+1);
+    }
   }
 
   const handleOk = () => {
@@ -74,11 +79,16 @@ function RegisterationPage() {
     if(!formData.phone){
       errors.phone = "Phone is required!!";
     }else if(!regexphone.test(formData.phone)){
-      errors.email = "Invalid phone number!!";
+      errors.phone = "Invalid phone number!!";
     }
     if(!formData.college){
       errors.college = "College is required!!";
     }
+    return errors;
+  }
+
+  const validate2 = (formData) => {
+    const errors = {};
     if(!formData.teamName){
       errors.teamName = "Team name is required!!";
     }
@@ -90,8 +100,6 @@ function RegisterationPage() {
     }
     return errors;
   }
-
-
 
 
 
