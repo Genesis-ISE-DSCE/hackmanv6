@@ -12,7 +12,6 @@ function RegisterationPage() {
   const [showPopup, setShowPopup] = useState(false);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
-  const [isNext, setIsNext] = useState(false);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -23,8 +22,8 @@ function RegisterationPage() {
     teamName: "",
     teamMembers: [],
     theme: "",
-    transactionId: "",
-    upiID: ""
+    transactionID: "",
+    upiID: "",
   });
 
    function handleClick() {
@@ -36,8 +35,8 @@ function RegisterationPage() {
       teamName: formData.teamName,
       teamMembers: formData.teamMembers,
       theme: formData.theme,
-      transactionID: formData.transactionId,
-      upiID: formData.upiID
+      transactionID: formData.transactionID,
+      upiID: formData.upiID,
     }
     setFormErrors(validate2(formData));
     setIsSubmit(true);
@@ -51,14 +50,7 @@ function RegisterationPage() {
   function handleNext(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
-    console.log(formErrors);
-    console.log(Object.keys(validate(formData)).length)
-    if(formErrors.length === 0){
-      setIsNext(true);
-    }
-    console.log(formErrors);
-    if(Object.keys(validate(formData)).length==0) {
-      console.log("Why god2");
+    if(Object.keys(validate(formData)).length===0) {
       setPage((curPage) => curPage+1);
     }
 
@@ -102,9 +94,6 @@ function RegisterationPage() {
     if(!formData.teamName){
       errors.teamName = "Team name is required!!";
     }
-    // if(!formData.theme){
-    //   errors.theme = "Theme is required!!";
-    // }
     if(formData.teamMembers.length === 0){
       errors.teamMembers = "Minimum 2 members in a team!!";
     }

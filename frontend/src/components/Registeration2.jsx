@@ -91,7 +91,7 @@ function Registration2({formData, setFormData, formErrors}) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-transID">Transaction ID :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-transID" name="transID" value={formData.transID || ""} onChange={handleChange} type="text" placeholder="Enter your Transaction ID" required></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-transactionID" name="transactionID" value={formData.transactionID || ""} onChange={handleChange} type="text" placeholder="Enter your Transaction ID" required></input>
                     </div>
                     <p className="text-red-600">{formErrors.transactionID}</p>
                 </div>
