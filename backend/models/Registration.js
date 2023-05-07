@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const RegistrationSchema = new Schema({
+  
   teamId: {
     type: String,
     required: true,
