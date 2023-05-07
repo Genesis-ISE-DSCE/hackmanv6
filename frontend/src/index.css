@@ -17,3 +17,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.login-page {
+  background-image: url("assets/images/admin_bg.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+
+.notopen {
+  background-image: url("assets/images/notopen_bg.png");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}

@@ -12,7 +12,7 @@ import Timeline from '../components/Timeline';
 import '../App.css';
 
 function LandingPage() {
-    const launchDate = new Date("June 4, 2023 12:00:00");
+    const launchDate = new Date("June 3, 2023 12:00:00");
 
     // Calculate the initial countdown value
     const currentTime = new Date();
