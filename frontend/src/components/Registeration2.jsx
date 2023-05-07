@@ -2,7 +2,7 @@ import eva_lightleft from "../assets/images/eva_lightbgleft.png";
 import eva_lightright from "../assets/images/eva_lightbgright.png";
 import React, { useState } from "react";
 
-function Registration2({formData,setFormData}) {
+function Registration2({formData, setFormData, formErrors}) {
     const handleChange=(event)=>{
         event.preventDefault();
         const name =event.target.name;
@@ -48,8 +48,9 @@ function Registration2({formData,setFormData}) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Team Name :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" name="teamName" value={formData.teamName || ""} onChange={handleChange} type="text" placeholder="Enter Your Team Name"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" name="teamName" value={formData.teamName || ""} onChange={handleChange} type="text" placeholder="Enter Your Team Name" required></input>
                     </div>
+                    <p className="text-red-600">{formErrors.teamName}</p>
                 </div>
 
                 <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
@@ -71,6 +72,7 @@ function Registration2({formData,setFormData}) {
                             placeholder="Team Member Name" />
                         </div>
                     ))}
+                    <p className="text-red-600">{formErrors.teamMembers}</p>
                     {AddButtonDisplay(numInputs)}
                 </div>
                 
@@ -79,8 +81,9 @@ function Registration2({formData,setFormData}) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Theme :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.theme || ""} onChange={handleChange} type="text" placeholder="Select Theme"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.theme || ""} onChange={handleChange} type="text" placeholder="Select Theme" required></input>
                     </div>
+                    <p className="text-red-600">{formErrors.theme}</p>
                 </div>
                 </div>
             </form>

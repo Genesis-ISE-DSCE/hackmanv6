@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import eva_bg_small_lef from "../assets/images/eva_bg_small_lef.png";
 import Navbar from '../components/Navbar';
@@ -10,6 +10,8 @@ import Axios from "axios"
 function RegisterationPage() {
   const [page, setPage] = useState(0);
   const [showPopup, setShowPopup] = useState(false);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -32,17 +34,69 @@ function RegisterationPage() {
       teamMembers: formData.teamMembers,
       theme: formData.theme
     }
+    setFormErrors(validate(formData));
+    setIsSubmit(true);
     console.log(regData);
      Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
     .then((res)=>{console.log(res)
       setShowPopup(true)})
     .catch((err)=>{console.log(err)})
-    
+  }
+
+  function handleNext(event) {
+    event.preventDefault();
+    setPage((curPage) => curPage+1);
   }
 
   const handleOk = () => {
     navigate('/');
   }
+
+  useEffect(() => {
+    console.log(formErrors);
+    if (Object.keys(formErrors).length === 0 && isSubmit){
+      console.log(formData);
+    }
+  }, [formErrors, isSubmit, formData]);
+
+  const validate = (formData) => {
+    const errors = {};
+    const regexemail = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/;
+    const regexphone = /^[0-9]{10}$/;
+    if(!formData.name){
+      errors.name = "Name is required!!";
+    }
+    if(!formData.email){
+      errors.email = "Email is required!!";
+    }else if(!regexemail.test(formData.email)){
+      errors.email = "Invalid email!!";
+    }
+    if(!formData.phone){
+      errors.phone = "Phone is required!!";
+    }else if(!regexphone.test(formData.phone)){
+      errors.email = "Invalid phone number!!";
+    }
+    if(!formData.college){
+      errors.college = "College is required!!";
+    }
+    if(!formData.teamName){
+      errors.teamName = "Team name is required!!";
+    }
+    if(!formData.theme){
+      errors.theme = "Theme is required!!";
+    }
+    if(formData.teamMembers.length === 0){
+      errors.teamMembers = "Minimum 2 members in a team!!";
+    }
+    return errors;
+  }
+
+
+
+
+
+
+
 
   const ButtonDisplay = () => {
     if (page === 0){
@@ -50,8 +104,8 @@ function RegisterationPage() {
         <div className="lg:mx-96 md:mx-48 mx-8">
           <div className="flex justify-center">
             <button onClick={(event) => {
-              event.preventDefault()
-              setPage((curPage) => curPage+1);}} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="submit">
+              handleNext(event);
+              }} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="submit">
               Next
             </button>
           </div>
@@ -85,13 +139,13 @@ function RegisterationPage() {
     if (page === 0){
       return (
         <div>
-          <Registeration formData={formData} setFormData={setFormData} />
+          <Registeration formData={formData} setFormData={setFormData} formErrors={formErrors} />
         </div>
       );
     }
     else {
       return (
-      <Registeration2 formData={formData} setFormData={setFormData} />
+      <Registeration2 formData={formData} setFormData={setFormData} formErrors={formErrors} />
       );
     }
   }
