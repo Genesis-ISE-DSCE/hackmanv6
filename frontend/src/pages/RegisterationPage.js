@@ -36,7 +36,7 @@ function RegisterationPage() {
       teamName: formData.teamName,
       teamMembers: formData.teamMembers,
       theme: formData.theme,
-      transactionId: formData.transactionId,
+      transactionID: formData.transactionId,
       upiID: formData.upiID
     }
     setFormErrors(validate2(formData));
@@ -57,7 +57,7 @@ function RegisterationPage() {
       setIsNext(true);
     }
     console.log(formErrors);
-    if(formData.college && formData.name && Object.keys(validate(formData)).length==0) {
+    if(Object.keys(validate(formData)).length==0) {
       console.log("Why god2");
       setPage((curPage) => curPage+1);
     }
