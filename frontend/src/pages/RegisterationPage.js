@@ -23,6 +23,8 @@ function RegisterationPage() {
     teamName: "",
     teamMembers: [],
     theme: "",
+    transactionId: "",
+    upiID: ""
   });
 
    function handleClick() {
@@ -33,7 +35,9 @@ function RegisterationPage() {
       college: formData.college,
       teamName: formData.teamName,
       teamMembers: formData.teamMembers,
-      theme: formData.theme
+      theme: formData.theme,
+      transactionId: formData.transactionId,
+      upiID: formData.upiID
     }
     setFormErrors(validate2(formData));
     setIsSubmit(true);
@@ -42,15 +46,23 @@ function RegisterationPage() {
     .then((res)=>{console.log(res)
       setShowPopup(true)})
     .catch((err)=>{console.log(err)})
+    setShowPopup(true)
   }
 
   function handleNext(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
-    setIsNext(true);
-    if(isNext === true) {
+    console.log(formErrors);
+    console.log(Object.keys(validate(formData)).length)
+    if(formErrors.length === 0){
+      setIsNext(true);
+    }
+    console.log(formErrors);
+    if(formData.college && formData.name && Object.keys(validate(formData)).length==0) {
+      console.log("Why god2");
       setPage((curPage) => curPage+1);
     }
+
   }
 
   const handleOk = () => {
@@ -87,24 +99,24 @@ function RegisterationPage() {
     return errors;
   }
 
-  const validate2 = (formData) => {
-    const errors = {};
+  const validate2 = (formData, errors=validate(formData)) => {
     if(!formData.teamName){
       errors.teamName = "Team name is required!!";
     }
-    if(!formData.theme){
-      errors.theme = "Theme is required!!";
-    }
+    // if(!formData.theme){
+    //   errors.theme = "Theme is required!!";
+    // }
     if(formData.teamMembers.length === 0){
       errors.teamMembers = "Minimum 2 members in a team!!";
     }
+    if(!formData.transactionID){
+      errors.transactionID = "Transaction ID is required!!";
+    }
+    if(!formData.upiID){
+      errors.upiID = "UPI ID is required!!";
+    }
     return errors;
   }
-
-
-
-
-
 
   const ButtonDisplay = () => {
     if (page === 0){
@@ -120,7 +132,7 @@ function RegisterationPage() {
         </div>
       );
     }
-    if (page === 1 ){
+    else{
       return (
         <div className="lg:mx-96 md:mx-48 mx-8 pb-36">
           <div className="">
@@ -168,7 +180,7 @@ function RegisterationPage() {
             <img className="lg:float-left lg:w-48 lg:h-auto md:float-left md:w-40 md:h-auto justify-center w-20 h-auto" src={eva_bg_small_lef} alt="Registration eva" />
           <div>
             <p className="font-poppins lg:text-2xl md:text-xl text-md text-center">Registration Successful !!</p>
-            <p className="font-poppins lg:text-sm md:text-sm text-xs text-center">Check your mail for any further updates.</p>
+            <p className="font-poppins lg:text-sm md:text-sm text-xs text-center">Check your mail for further updates.</p>
           </div>
           <div className='lg:pt-20 lg:pb-8 md:pt-16 md:pb-6 pt-2'>
             <button onClick={handleOk} className="lg:text-xl shadow hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">

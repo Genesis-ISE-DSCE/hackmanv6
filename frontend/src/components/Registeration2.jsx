@@ -76,7 +76,7 @@ function Registration2({formData, setFormData, formErrors}) {
                     {AddButtonDisplay(numInputs)}
                 </div>
                 
-                <div className="lg:w-full lg:pt-8 lg:pb-12 md:w-full md:items-center md-center md:pt-6 items-center pt-6 pb-8 place-content-center">
+                {/* <div className="lg:w-full lg:pt-8 lg:pb-12 md:w-full md:items-center md-center md:pt-6 items-center pt-6 pb-8 place-content-center">
                     <div className="pb-2">
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Theme :</label>
                     </div>
@@ -84,6 +84,26 @@ function Registration2({formData, setFormData, formErrors}) {
                         <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.theme || ""} onChange={handleChange} type="text" placeholder="Select Theme" required></input>
                     </div>
                     <p className="text-red-600">{formErrors.theme}</p>
+                </div> */}
+
+                <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
+                    <div className="pb-2">
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-transID">Transaction ID :</label>
+                    </div>
+                    <div className="">
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-transID" name="transID" value={formData.transID || ""} onChange={handleChange} type="text" placeholder="Enter your Transaction ID" required></input>
+                    </div>
+                    <p className="text-red-600">{formErrors.transactionID}</p>
+                </div>
+
+                <div className="lg:w-full lg:pt-8 lg:pb-12 md:w-full md:items-center md-center md:pt-6 items-center pt-6 pb-8 place-content-center">
+                    <div className="pb-2">
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-upiID">UPI ID :</label>
+                    </div>
+                    <div className="">
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-upiID" name="upiID" value={formData.upiID || ""} onChange={handleChange} type="text" placeholder="Enter your UPI ID" required></input>
+                    </div>
+                    <p className="text-red-600">{formErrors.upiID}</p>
                 </div>
                 </div>
             </form>
