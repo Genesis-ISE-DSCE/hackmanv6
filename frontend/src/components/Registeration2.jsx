@@ -2,7 +2,13 @@ import eva_lightleft from "../assets/images/eva_lightbgleft.png";
 import eva_lightright from "../assets/images/eva_lightbgright.png";
 import React, { useState } from "react";
 
-function Registration2(formData) {
+function Registration2({formData, setFormData, formErrors}) {
+    const handleChange=(event)=>{
+        event.preventDefault();
+        const name =event.target.name;
+        const value = event.target.value;
+        setFormData((values)=>({...values,[name]:value}))
+    }
     const [numInputs, setNumInputs] = useState(1);
     const handleAddInput = () => {
         setNumInputs(numInputs + 1);
@@ -42,8 +48,9 @@ function Registration2(formData) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Team Name :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" name="teamName" value={formData.formData.teamName} onChange={(e) => {formData.setFormData({...formData.formData, teamName: e.target.value})}} type="text" placeholder="Enter Your Team Name"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" name="teamName" value={formData.teamName || ""} onChange={handleChange} type="text" placeholder="Enter Your Team Name" required></input>
                     </div>
+                    <p className="text-red-600">{formErrors.teamName}</p>
                 </div>
 
                 <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
@@ -52,9 +59,20 @@ function Registration2(formData) {
                     </div>
                     {[...Array(numInputs)].map((_, index) => (
                         <div className="pt-2">
-                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" key={index} id="inline-team-member" name="teamMembers" value={formData.formData.teamMembers[index]} onChange={(e) => {const updatedTeamMembers = [...formData.formData.teamMembers]; updatedTeamMembers[index] = e.target.value; formData.setFormData({...formData, teamMembers: updatedTeamMembers}); }} type="text" placeholder="Team Member Name" />
+                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2"
+                            key={index} id="inline-team-member"
+                            name="teamMembers"
+                            value={formData.teamMembers[index]}
+                            onChange={(e) =>
+                                {const updatedTeamMembers = [...formData.teamMembers];
+                                    updatedTeamMembers[index] = e.target.value;
+                                    setFormData({...formData, teamMembers: updatedTeamMembers}); }
+                                }
+                            type="text"
+                            placeholder="Team Member Name" />
                         </div>
                     ))}
+                    <p className="text-red-600">{formErrors.teamMembers}</p>
                     {AddButtonDisplay(numInputs)}
                 </div>
                 
@@ -63,8 +81,9 @@ function Registration2(formData) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Theme :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.formData.theme} onChange={(e) => {formData.setFormData({...formData.formData, theme: e.target.value})}} type="text" placeholder="Select Theme"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.theme || ""} onChange={handleChange} type="text" placeholder="Select Theme" required></input>
                     </div>
+                    <p className="text-red-600">{formErrors.theme}</p>
                 </div>
                 </div>
             </form>

@@ -3,29 +3,29 @@ import React from "react";
 const Timeline = () => {
   const events = [
     {
-      date: "May 4th-24th",
+      date: "May 4th-26th",
       title: "Registration",
-      link: "https://example.com/event1",
+      link: "/registeration",
     },
     {
-      date: "June 1st-5th",
+      date: "May 28th-31st",
       title: "Idea Submission",
-      link: "https://example.com/event2",
+      link: "/notopen",
     },
     {
-      date: "June 4th-8th",
+      date: "June 3rd-4th",
       title: "Hack Begins",
-      link: "https://example.com/event3",
+      link: "/notopen",
     },
     {
-      date: "June 6th",
+      date: "June 5th",
       title: "Results",
-      link: "https://example.com/event4",
+      link: "/notopen",
     },
   ];
 
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-8 pb-2">
+    <div id = "schedule" className="mx-auto px-4 sm:px-6 lg:px-8 bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-8 pb-2">
       <h1 className="lg:text-6xl lg:pb-16 md:text-4xl md:pb-6 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">EVENT TIMELINE</h1>
       <div className="relative">
         {/* Vertical line */}
@@ -39,9 +39,9 @@ const Timeline = () => {
         <div className="absolute h-full border-2 border-[#22C3FF] left-1/2 transform -translate-x-1/2"></div>
 
         {/* Timeline for small and medium devices */}
-        <div className="max-w-xl mx-auto lg:hidden">
+        <div className="max-w-xl mx-auto flex flex-col items-center lg:hidden">
           {events.map((event, index) => (
-            <div key={event.id} className="mb-8 relative bg-[#23354E] rounded-lg mx-8">
+            <div key={event.id} className="mb-8 relative bg-[#23354E] rounded-lg mx-8 sm:w-1/2 w-60">
               <div className="flex items-center mb-4">
 
                 <div className="relative px-6 w-full text-center py-4">
@@ -52,7 +52,7 @@ const Timeline = () => {
                     href={event.link}
                     className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#24263B]"
                   >
-                    Link
+                    Link &gt;
                   </a>
                 </div>
               </div>
@@ -66,14 +66,14 @@ const Timeline = () => {
           <div
             key={index}
             className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
-              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-2/5 ml-30 hidden lg:block pt-2 ml-12 mr-12`}
+              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-1/4 ml-60 mr-60 hidden lg:block pt-2`}
           >
             <div className="relative px-6 py-4">
 
               <p className="lg:text-3xl lg:pt-2 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
               <p className="lg:text-xl lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
               <a href={event.link} className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#D4DFC7]">
-                Link
+                Link &gt;
               </a>
             </div>
           </div>

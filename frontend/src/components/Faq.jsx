@@ -81,7 +81,7 @@ const Faq = () => {
   };
 
   return (
-    <div id="sponsors" className="bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-4 pb-4">
+    <div id="faq" className="bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-4 pb-4">
     <div className="lg:text-6xl lg:pb-12 md:text-4xl md:pb-4 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">FAQ's</div>
     <div className="faq-section lg:mx-20 md:mx-8 mx-4 text-6xl">
       {faqList.map((faq, index) => (
