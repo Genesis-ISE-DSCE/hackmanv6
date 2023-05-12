@@ -15,7 +15,7 @@ function About() {
                     </Link>              
                 </div> */}
                 <Link to={"/registeration"} className="font-semibold text-xl">
-                <button className="hidden lg:block pt-1 pb-2 right-0 px-5 py-4 rounded-lg mt-4 mb-2 mr-2 text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#22C3FF]">
+                <button className="pt-1 pb-2 right-0 px-5 py-4 rounded-lg mt-4 mb-2 text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#22C3FF]">
                     Register
                 </button>
                 </Link>
