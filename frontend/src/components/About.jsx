@@ -21,7 +21,7 @@ function About() {
                 </Link>
             </div>
             <div className="lg:w-1/2 lg:flex lg:items-center lg:justify-center md:w-1/2 md:flex md:items-center md:justify-center flex items-center">
-                <img className="lg:block lg:w-[40%] md:w-[50%] hidden" src={eva_bg} alt="Registration eva" />
+                <img className="lg:block lg:w-[55%] md:w-[50%] hidden" src={eva_bg} alt="Registration eva" />
             </div>
         </div>
     );
