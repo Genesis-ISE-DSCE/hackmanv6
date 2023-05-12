@@ -80,7 +80,7 @@ npm start
 
 ![App Screenshot](https://github.com/Hackman-Genesis/hackmanv6/blob/main/frontend/src/assets/images/ss1.png)
 ![App Screenshot](https://github.com/Hackman-Genesis/hackmanv6/blob/main/frontend/src/assets/images/ss2.png)
-
+![App Screenshot](https://github.com/Hackman-Genesis/hackmanv6/blob/main/frontend/src/assets/images/ss3.png)
 
 ## How to contribute
 
