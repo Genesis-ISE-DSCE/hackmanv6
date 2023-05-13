@@ -24,6 +24,8 @@ function RegisterationPage() {
     theme: "",
     transactionID: "",
     upiID: "",
+    teamPhone: [],
+    teamEmail: []
   });
 
    function handleClick() {
@@ -37,6 +39,8 @@ function RegisterationPage() {
       theme: formData.theme,
       transactionID: formData.transactionID,
       upiID: formData.upiID,
+      teamPhone: formData.teamPhone,
+      teamEmail: formData.teamEmail
     }
     setFormErrors(validate2(formData));
     setIsSubmit(true);
@@ -53,7 +57,6 @@ function RegisterationPage() {
     if(Object.keys(validate(formData)).length===0) {
       setPage((curPage) => curPage+1);
     }
-
   }
 
   const handleOk = () => {

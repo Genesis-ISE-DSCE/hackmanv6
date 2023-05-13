@@ -58,7 +58,7 @@ function Registration2({formData, setFormData, formErrors}) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Team Members :</label>
                     </div>
                     {[...Array(numInputs)].map((_, index) => (
-                        <div className="pt-2">
+                        <div className="pt-4">
                             <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2"
                             key={index} id="inline-team-member"
                             name="teamMembers"
@@ -66,10 +66,42 @@ function Registration2({formData, setFormData, formErrors}) {
                             onChange={(e) =>
                                 {const updatedTeamMembers = [...formData.teamMembers];
                                     updatedTeamMembers[index] = e.target.value;
-                                    setFormData({...formData, teamMembers: updatedTeamMembers}); }
+                                    setFormData({...formData, teamMembers: updatedTeamMembers}); 
                                 }
+                            }
                             type="text"
                             placeholder="Team Member Name" />
+
+                        <div className="mt-1">
+                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" 
+                            key={index} id="inline-team-email" 
+                            name="teamEmail" 
+                            value={formData.teamEmail[index]} 
+                            onChange={(e) =>
+                                {const updatedTeamEmail = [...formData.teamEmail];
+                                    updatedTeamEmail[index] = e.target.value;
+                                    setFormData({...formData, teamEmail: updatedTeamEmail}); 
+                                }
+                            } 
+                            type="mail" 
+                            placeholder="Team Member Email" />
+                        </div>
+                        
+                        <div className="mt-1">
+                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" 
+                            id="inline-team-phone" 
+                            name="teamPhone" 
+                            value={formData.teamPhone[index]} 
+                            onChange={(e) =>
+                                {const updatedTeamPhone = [...formData.teamPhone];
+                                    updatedTeamPhone[index] = e.target.value;
+                                    setFormData({...formData, teamPhone: updatedTeamPhone}); 
+                                }
+                            } 
+                            type="tel" 
+                            placeholder="Team Member Phone" />
+                        </div>
+
                         </div>
                     ))}
                     <p className="text-red-600">{formErrors.teamMembers}</p>
