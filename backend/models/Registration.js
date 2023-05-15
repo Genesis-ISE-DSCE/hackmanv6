@@ -9,6 +9,10 @@ const RegistrationSchema = new Schema({
     required: true,
     unique: true
   },
+  teamNumber: {
+    type: Number,
+    // required: true,
+  },
   name: {
     type: String,
     required: true
@@ -36,10 +40,26 @@ const RegistrationSchema = new Schema({
       // maxlength: 4,
       required: true
     }],
-  theme: {
-    type: String,
-    required: true
-  }
+    teamEmail: [
+      {
+        type: String,
+        // maxlength: 4,
+        required: true
+      }],
+      teamPhone: [
+        {
+          type: String,
+          // maxlength: 4,
+          required: true
+        }],
+      transactionID: {
+        type: String,
+        required: true
+      },
+      upiID: {
+        type: String,
+        required: true
+      }
 });
 
 const Registration = mongoose.model('Registration', RegistrationSchema);

@@ -3,30 +3,30 @@ import React from "react";
 const Timeline = () => {
   const events = [
     {
-      date: "May 4th-24th",
+      date: "May 4th-26th",
       title: "Registration",
       link: "/registeration",
     },
     {
-      date: "June 1st-5th",
+      date: "May 28th-31st",
       title: "Idea Submission",
-      link: "https://example.com/event2",
+      link: "/notopen",
     },
     {
-      date: "June 4th-8th",
+      date: "June 3rd-4th",
       title: "Hack Begins",
-      link: "https://example.com/event3",
+      link: "/notopen",
     },
     {
-      date: "June 6th",
+      date: "June 5th",
       title: "Results",
-      link: "https://example.com/event4",
+      link: "/notopen",
     },
   ];
 
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-8 pb-2">
-      <h1 className="lg:text-6xl lg:pb-16 md:text-4xl md:pb-6 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">EVENT TIMELINE</h1>
+    <div id = "schedule" className="mx-auto px-4 sm:px-6 lg:px-8 bg-[#24263B] lg:pt-12 lg:pb-16 md:pt-12 md:pb-16 pt-8 pb-2">
+      <h1 className="lg:text-6xl lg:pb-16 md:text-4xl md:pb-6 text-[#22C3FF] pb-4 text-center font-poppins font-bold text-3xl">Event Timeline</h1>
       <div className="relative">
         {/* Vertical line */}
         <div className="absolute h-full border-2 border-[#22C3FF] left-1/2 transform -translate-x-1/2 hidden lg:block"></div>
@@ -70,8 +70,8 @@ const Timeline = () => {
           >
             <div className="relative px-6 py-4">
 
-              <p className="lg:text-3xl lg:pt-2 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
-              <p className="lg:text-xl lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
+              <p className="lg:text-2xl lg:pt-0 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
+              <p className="lg:text-lg lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
               <a href={event.link} className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#D4DFC7]">
                 Link &gt;
               </a>

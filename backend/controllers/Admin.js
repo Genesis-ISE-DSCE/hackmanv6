@@ -1,6 +1,7 @@
 const Admin = require("../models/Admin")
 const BigPromise = require("../middlewares/BigPromise");
 const cookieToken =require("../utilis/CookieToken");
+const CustomError = require("../utilis/CustomError")
 
 
 

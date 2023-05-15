@@ -2,7 +2,7 @@ const Registration = require('../models/Registration');
 const CustomError = require("../utilis/CustomError")
 
 exports.createRegistration = async (req, res,next) => {
-  const { name, email, phone, college, teamName, teamMembers, theme } = req.body;
+  const { name, email, phone, college, teamName, teamMembers,teamEmail,teamPhone, transactionID ,upiID} = req.body;
 
 if(!name){
   return(next(new CustomError("name is required",400)))
@@ -22,8 +22,17 @@ if(!teamName){
 if(!teamMembers){
   return(next(new CustomError("teamMembers is required",400)))
 }
-if(!theme){
-  return(next(new CustomError("theme is required",400)))
+if(!teamEmail){
+  return(next(new CustomError("team email is required",400)))
+}
+if(!teamPhone){
+  return(next(new CustomError("team phone is required",400)))
+}
+if(!transactionID){
+  return(next(new CustomError("transactionId is required",400)))
+}
+if(!upiID){
+  return(next(new CustomError("upiId is required",400)))
 }
 
 const user = await Registration.findOne({email});
@@ -39,6 +48,7 @@ if(team){
 }
   // Generate uniqueId using current timestamp
   const teamId = `hackman${Date.now()}`;
+  const teamNumber = await Registration.estimatedDocumentCount() +1;
 
   
 
@@ -51,7 +61,11 @@ if(team){
       college,
       teamName,
       teamMembers,
-      theme
+      teamEmail,
+      teamPhone,
+      transactionID,
+      upiID,
+      teamNumber
     });
 
     

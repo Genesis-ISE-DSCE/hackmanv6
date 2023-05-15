@@ -2,7 +2,7 @@ import eva_lightleft from "../assets/images/eva_lightbgleft.png";
 import eva_lightright from "../assets/images/eva_lightbgright.png";
 import React, { useState } from "react";
 
-function Registration2({formData,setFormData}) {
+function Registration2({formData, setFormData, formErrors}) {
     const handleChange=(event)=>{
         event.preventDefault();
         const name =event.target.name;
@@ -48,8 +48,9 @@ function Registration2({formData,setFormData}) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Team Name :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" name="teamName" value={formData.teamName || ""} onChange={handleChange} type="text" placeholder="Enter Your Team Name"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-team-name" name="teamName" value={formData.teamName || ""} onChange={handleChange} type="text" placeholder="Enter Your Team Name" required></input>
                     </div>
+                    <p className="text-red-600">{formErrors.teamName}</p>
                 </div>
 
                 <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
@@ -57,7 +58,7 @@ function Registration2({formData,setFormData}) {
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Team Members :</label>
                     </div>
                     {[...Array(numInputs)].map((_, index) => (
-                        <div className="pt-2">
+                        <div className="pt-4">
                             <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2"
                             key={index} id="inline-team-member"
                             name="teamMembers"
@@ -65,22 +66,76 @@ function Registration2({formData,setFormData}) {
                             onChange={(e) =>
                                 {const updatedTeamMembers = [...formData.teamMembers];
                                     updatedTeamMembers[index] = e.target.value;
-                                    setFormData({...formData, teamMembers: updatedTeamMembers}); }
+                                    setFormData({...formData, teamMembers: updatedTeamMembers}); 
                                 }
+                            }
                             type="text"
                             placeholder="Team Member Name" />
+
+                        <div className="mt-1">
+                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" 
+                            key={index} id="inline-team-email" 
+                            name="teamEmail" 
+                            value={formData.teamEmail[index]} 
+                            onChange={(e) =>
+                                {const updatedTeamEmail = [...formData.teamEmail];
+                                    updatedTeamEmail[index] = e.target.value;
+                                    setFormData({...formData, teamEmail: updatedTeamEmail}); 
+                                }
+                            } 
+                            type="mail" 
+                            placeholder="Team Member Email" />
+                        </div>
+                        
+                        <div className="mt-1">
+                            <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" 
+                            id="inline-team-phone" 
+                            name="teamPhone" 
+                            value={formData.teamPhone[index]} 
+                            onChange={(e) =>
+                                {const updatedTeamPhone = [...formData.teamPhone];
+                                    updatedTeamPhone[index] = e.target.value;
+                                    setFormData({...formData, teamPhone: updatedTeamPhone}); 
+                                }
+                            } 
+                            type="tel" 
+                            placeholder="Team Member Phone" />
+                        </div>
+
                         </div>
                     ))}
+                    <p className="text-red-600">{formErrors.teamMembers}</p>
                     {AddButtonDisplay(numInputs)}
                 </div>
                 
-                <div className="lg:w-full lg:pt-8 lg:pb-12 md:w-full md:items-center md-center md:pt-6 items-center pt-6 pb-8 place-content-center">
+                {/* <div className="lg:w-full lg:pt-8 lg:pb-12 md:w-full md:items-center md-center md:pt-6 items-center pt-6 pb-8 place-content-center">
                     <div className="pb-2">
                         <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Theme :</label>
                     </div>
                     <div className="">
-                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.theme || ""} onChange={handleChange} type="text" placeholder="Select Theme"></input>
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-theme" name="theme" value={formData.theme || ""} onChange={handleChange} type="text" placeholder="Select Theme" required></input>
                     </div>
+                    <p className="text-red-600">{formErrors.theme}</p>
+                </div> */}
+
+                <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
+                    <div className="pb-2">
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-transID">Transaction ID :</label>
+                    </div>
+                    <div className="">
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-transactionID" name="transactionID" value={formData.transactionID || ""} onChange={handleChange} type="text" placeholder="Enter your Transaction ID" required></input>
+                    </div>
+                    <p className="text-red-600">{formErrors.transactionID}</p>
+                </div>
+
+                <div className="lg:w-full lg:pt-8 lg:pb-12 md:w-full md:items-center md-center md:pt-6 items-center pt-6 pb-8 place-content-center">
+                    <div className="pb-2">
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-upiID">UPI ID :</label>
+                    </div>
+                    <div className="">
+                        <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-upiID" name="upiID" value={formData.upiID || ""} onChange={handleChange} type="text" placeholder="Enter your UPI ID" required></input>
+                    </div>
+                    <p className="text-red-600">{formErrors.upiID}</p>
                 </div>
                 </div>
             </form>

@@ -26,15 +26,19 @@ const ParticipantsList =() => {
         <p className="w-44 ">Team Name</p>
         <p className="ml-20 w-44 ">Team Code</p>
         <p className="ml-20 w-44 ">Team Leader</p>
-        <p className="ml-20 w-44 ">College</p>
         <p className="ml-20 w-44 ">Team Members</p>
+        <p className="ml-20 w-44 ">College</p>
         <p className="ml-20 w-44 ">Email</p>
         <p className="ml-20 w-44 ">Phone</p>
-        <p className="ml-20 w-44 ">Theme</p>
+        <p className="ml-20 w-44 ">Team Members Email</p>
+        <p className="ml-20 w-44 ">Team Members Phone</p>
+        <p className="ml-20 w-44 ">Transaction Id</p>
+        <p className="ml-20 w-44 ">UPI Id</p>
+
       </div>
       <div>
         {show && participants.map((item)=>(
-          <ParticipantItem   teamName={item.teamName} teamId={item.teamId} teamLeader={item.name} teamMembers={item.teamMembers} college={item.college} email={item.email} phone={item.phone} theme={item.theme} idea="Not submitted" project="Not Submitted" />
+          <ParticipantItem   teamName={item.teamName} teamId={item.teamId} teamLeader={item.name} teamMembers={item.teamMembers} college={item.college} email={item.email} phone={item.phone} teamEmail={item.teamEmail} teamPhone={item.teamPhone} transactionID={item.transactionID} upiID={item.upiID} />
         ))}
       </div>
     </div>

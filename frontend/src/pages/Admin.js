@@ -1,9 +1,9 @@
 import React from 'react'
-import ParticipantsList from '../components/Admin/ParticipantsList'
+import MyTableComponent from '../components/Admin/MyTableComponent'
 
 const Admin = () => {
   return (
-    <div><ParticipantsList /></div>
+    <div><MyTableComponent /></div>
   )
 }
 

@@ -7,6 +7,6 @@ const {isLoggedIn}=require("../middlewares/Admin")
 router.route('/registration').post(createRegistration);
 
 // POST new registration
-router.route('/registration').get(getAllRegistrations);
+router.route('/registration').get(isLoggedIn,getAllRegistrations);
 
 module.exports = router;
