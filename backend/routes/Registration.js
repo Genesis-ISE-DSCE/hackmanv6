@@ -1,11 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const registrationController = require('../controllers/Registration');
+const {createRegistration,getAllRegistrations} = require('../controllers/Registration');
+const {isLoggedIn}=require("../middlewares/Admin")
 
 // GET all registrations
-router.post('/registration', registrationController.createRegistration);
+router.route('/registration').post(createRegistration);
 
 // POST new registration
-router.get('/registration', registrationController.getAllRegistrations);
+router.route('/registration').get(isLoggedIn,getAllRegistrations);
 
 module.exports = router;

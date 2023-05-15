@@ -1,0 +1,31 @@
+/* Example styles for the table */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th,
+  td {
+    padding: 8px;
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  td {
+    text-align: center;
+  }
+  
+  /* Additional styles for specific elements, such as hover effects */
+  tr:hover {
+    background-color: #f7f7f7;
+  }
+  
