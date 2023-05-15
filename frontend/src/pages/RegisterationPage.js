@@ -45,8 +45,8 @@ function RegisterationPage() {
     setFormErrors(validate2(formData));
     setIsSubmit(true);
     console.log(regData);
-    //  Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
-     Axios.post("http://localhost:4000/api/v1/registration",regData)
+     Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
+    //  Axios.post("http://localhost:4000/api/v1/registration",regData)
 
     .then((res)=>{console.log(res)
       setShowPopup(true)})
