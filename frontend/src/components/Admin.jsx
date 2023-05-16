@@ -1,20 +1,14 @@
-import {useState} from "react"
+import React,{useState} from "react"
 import '../index.css'
 import Axios from "axios"
 import {useNavigate} from "react-router-dom"
 
 function Admin() {
-    const [credentials,setCredentials] =useState({
-        // email:"",
-        // password:""
-    });
+    const [credentials,setCredentials] =useState({});
+    const [authenticated,setAuthenicated] =useState(false);
+    const [isLoggedIn,setIsLoggedIn]=useState(true)
     const navigate=useNavigate()
-    // const handleChange=(event)=>{
-    //     event.preventDefault()
-    //     const name=event.target.name;
-    //     const value=event.taregt.value;
-    //     setCredentials((values)=>({...values,[name]:value}))
-    // }
+
     const handleChange=(event)=>{
         event.preventDefault();
         const name =event.target.name;
@@ -26,9 +20,14 @@ function Admin() {
         console.log(credentials)
         Axios.post("http://localhost:4000/api/v1/login",credentials)
         .then(
-            navigate("/participants-list")
-            // console.log("dinesh")
-        )
+            setIsLoggedIn(true)
+           
+            //  console.log("dinesh")
+        
+        ).then(()=>{
+            console.log(isLoggedIn)
+            navigate("/participants-list",{state:authenticated})
+        })
         .catch((err)=>console.log(err))
     }
 

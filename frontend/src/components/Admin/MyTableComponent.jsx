@@ -1,10 +1,14 @@
 import React, { useEffect ,useState} from 'react';
-import styled from 'styled-components'
 import { useTable,useBlockLayout, useResizeColumns } from 'react-table';
+import {useLocation, useNavigate} from "react-router-dom"
 import Axios from 'axios';
 import './table.css'
 
 function MyTableComponent() {
+  const location = useLocation();
+  const navigate=useNavigate()
+
+  const authenticated=location.state;
   const [dat,setDat]=useState([
     {
       college : "daka",
@@ -31,7 +35,8 @@ function MyTableComponent() {
         // Example: setData(response.data)
         setDat(response.data)
         setRecieved(true);
-        console.log(response.data)
+        console.log("authenticated")
+        // console.log(response.data)
       })
       .catch(error => {
         // Handle error if the API request fails
@@ -109,8 +114,9 @@ function MyTableComponent() {
   });
 
   return (
-   <div>
-    {recieved &&  <table {...getTableProps()}>
+  <>{
+    true ?  <div>
+    {recieved ? <table {...getTableProps()}>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -134,8 +140,10 @@ function MyTableComponent() {
           );
         })}
       </tbody>
-    </table>}
-   </div>
+    </table> : <p>Loading please wait......</p>}
+   </div> : <p>login first</p>
+  }
+  </>
   );
 }
 
