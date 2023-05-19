@@ -1,6 +1,6 @@
 const Admin = require("../models/Admin");
 const BigPromise = require("../middlewares/BigPromise");
-const CustomError = require("../utilis/customError")
+const CustomError = require("../utilis/CustomError")
 const jwt = require("jsonwebtoken");
 
 exports.isLoggedIn  = BigPromise(async(req,res,next)=>{
