@@ -29,8 +29,8 @@ function Admin() {
             }
         
         ).then((res)=>{
-            sessionStorage.setItem('token', JSON.stringify(res.token));
-            console.log(res.token)
+            // sessionStorage.setItem('token', JSON.stringify(res.token));
+            console.log(res)
             // console.log( JSON.stringify(res.data.token))
             // console.log(isLoggedIn)
             navigate("/participants-list",{state:authenticated})
