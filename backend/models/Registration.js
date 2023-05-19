@@ -13,6 +13,11 @@ const RegistrationSchema = new Schema({
     type: Number,
     // required: true,
   },
+  admin: {
+    type: mongoose.Schema.ObjectId,
+    ref: "Admin",
+    // required: true,
+  },
   name: {
     type: String,
     required: true
