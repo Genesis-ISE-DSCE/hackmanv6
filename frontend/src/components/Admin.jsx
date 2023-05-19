@@ -22,19 +22,22 @@ function Admin() {
 
         Axios.post("https://hackmanv6.onrender.com/api/v1/login",credentials)
         .then(
-            ()=>{
+            (res)=>{
                 setIsLoggedIn(true)
-        
+             console.log(res)
+                         // sessionStorage.setItem('token', JSON.stringify(res.token));
+
              console.log("dinesh")
+             navigate("/participants-list",{state:authenticated})
+
             }
         
-        ).then((res)=>{
-            // sessionStorage.setItem('token', JSON.stringify(res.token));
-            console.log(res)
-            // console.log( JSON.stringify(res.data.token))
-            // console.log(isLoggedIn)
-            navigate("/participants-list",{state:authenticated})
-        })
+        )
+        // .then((res)=>{
+        //     // sessionStorage.setItem('token', JSON.stringify(res.token));
+        //     // console.log( JSON.stringify(res.data.token))
+        //     // console.log(isLoggedIn)
+        // })
         .catch((err)=>console.log(err))
     }
 
