@@ -28,14 +28,18 @@ function MyTableComponent() {
   
   const [recieved,setRecieved]=useState(false);
   useEffect(() => {
-    // Axios.get("http://localhost:4000/api/v1/registration")
-    Axios.get("https://hackmanv6.onrender.com/api/v1/registration")
+    const tokenString = sessionStorage.getItem('token');
+    const userToken = JSON.parse(tokenString);
+    // console.log(userToken)
+    Axios.get("http://localhost:4000/api/v1/registration",
+     { headers: {"Authorization" : userToken}} )
+    // Axios.get("https://hackmanv6.onrender.com/api/v1/registration")
       .then(response => {
         // Update the data array or state variable with the fetched data
         // Example: setData(response.data)
         setDat(response.data)
         setRecieved(true);
-        console.log("authenticated")
+        // console.log("authenticated")
         // console.log(response.data)
       })
       .catch(error => {

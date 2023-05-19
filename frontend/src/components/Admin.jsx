@@ -24,8 +24,11 @@ function Admin() {
            
             //  console.log("dinesh")
         
-        ).then(()=>{
-            console.log(isLoggedIn)
+        ).then((res)=>{
+            sessionStorage.setItem('token', JSON.stringify(res.data.token));
+            // console.log(res.data.token)
+            // console.log( JSON.stringify(res.data.token))
+            // console.log(isLoggedIn)
             navigate("/participants-list",{state:authenticated})
         })
         .catch((err)=>console.log(err))
