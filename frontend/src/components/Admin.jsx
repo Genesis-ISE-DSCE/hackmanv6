@@ -18,7 +18,9 @@ function Admin() {
     const handleSubmit=(e)=>{
         e.preventDefault();
         console.log(credentials)
-        Axios.post("http://localhost:4000/api/v1/login",credentials)
+        //     // Axios.get("https://hackmanv6.onrender.com/api/v1/registration")
+
+        Axios.post("https://hackmanv6.onrender.com/api/v1/login",credentials)
         .then(
             setIsLoggedIn(true)
            
