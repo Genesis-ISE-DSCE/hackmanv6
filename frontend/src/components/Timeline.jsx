@@ -3,22 +3,22 @@ import React from "react";
 const Timeline = () => {
   const events = [
     {
-      date: "May 4th-26th",
+      date: "May 20th - June 16th",
       title: "Registration",
       link: "/registeration",
     },
     {
-      date: "May 28th-31st",
+      date: "June 18th-22nd",
       title: "Idea Submission",
       link: "/notopen",
     },
     {
-      date: "June 3rd-4th",
+      date: "June 24th-25th",
       title: "Hack Begins",
       link: "/notopen",
     },
     {
-      date: "June 5th",
+      date: "June 25th",
       title: "Results",
       link: "/notopen",
     },
