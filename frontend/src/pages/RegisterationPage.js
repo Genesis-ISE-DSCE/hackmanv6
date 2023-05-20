@@ -1,11 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import eva_bg_small_lef from "../assets/images/eva_bg_small_lef.png";
+import ayushiQR from "../assets/images/ayushiQR.jpeg";
+import taranaQR from "../assets/images/taranaQR.jpeg";
 import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';
 import Registeration2 from '../components/Registeration2';
 import '../App.css';
-import Axios from "axios"
+import Axios from "axios";
 
 function RegisterationPage() {
   const [page, setPage] = useState(0);
@@ -56,9 +58,10 @@ function RegisterationPage() {
   function handleNext(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
-    if(Object.keys(validate(formData)).length===0) {
-      setPage((curPage) => curPage+1);
-    }
+    setPage((curPage) => curPage+1);
+    // if(Object.keys(validate(formData)).length===0) {
+    //   setPage((curPage) => curPage+1);
+    // }
   }
 
   const handleOk = () => {
@@ -127,7 +130,7 @@ function RegisterationPage() {
     }
     else{
       return (
-        <div className="lg:mx-96 md:mx-48 mx-8 pb-36">
+        <div className="lg:mx-96 md:mx-48 mx-8 pb-0">
           <div className="">
             <div className="flex justify-center float-left">
               <button onClick={() => {setPage((curPage) => curPage-1);}} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
@@ -141,6 +144,18 @@ function RegisterationPage() {
               <button onClick={handleClick} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-2 rounded text-sm" type="submit">
                 Submit
               </button>
+            </div>
+          </div>
+
+          <div className="pb-8">
+            <p className="font-poppins text-[#ffffff] text-center lg:pt-8 lg:text-2xl pt-24 font-semibold text-2xl">Scan for Payment</p>
+            <div className='lg:float-left lg:pl-16 md:float-left md:pl-2'>
+              <img className="lg:mt-12 lg:w-60 md:mt-6 md:w-40 mt-6 w-56 mx-auto" src={ayushiQR} alt="QR Code 1" />
+              <p className="pt-2 font-poppins text-sm text-[#ffffff] text-center font-semibold">UPI ID: 9916708160@paytm</p>
+            </div>
+            <div className='lg:float-right lg:pr-16 md:float-right md:pr-2'>
+              <img className="lg:mt-12 lg:w-60 md:mt-6 md:w-40 mt-12 w-56 mx-auto" src={taranaQR} alt="QR Code 2" />
+              <p className="pt-2 font-poppins text-sm text-[#ffffff] text-center font-semibold">UPI ID: taranashetty2002@oksbi</p>
             </div>
           </div>
         </div>

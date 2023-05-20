@@ -30,7 +30,7 @@ function Counter(props) {
                         <img className="lg:float-left lg:ml-48 lg:w-[15%] md:float-left md:ml-8 md:w-[10%] float-left w-24" src={eva_bg_small_lef} alt="Registration eva" />
                         <img className="lg:float-right lg:mr-48 lg:w-[15%] md:float-right md:mr-8 md:w-[10%] float-right w-24" src={eva_bg_small_rig} alt="Registration eva" />
                     </div>
-                    <h1 className="lg:pt-20 lg:text-5xl md:pt-14 md:text-3xl font-bold text-center justify-center text-2xl pt-8 pb-4 text-[#D4DFC7]">JUNE 3rd-4th</h1>
+                    <h1 className="lg:pt-20 lg:text-5xl md:pt-14 md:text-3xl font-bold text-center justify-center text-2xl pt-8 pb-4 text-[#D4DFC7]">JUNE 24th-25th</h1>
                     <h2 className="lg:text-3xl md:text-2xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF]">&lt;BreakIt&gt;  &lt;MakeIt&gt;  &lt;OwnIt&gt;</h2>
                 </div>
             </section>
