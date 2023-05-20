@@ -59,7 +59,7 @@ const Navbar = (props) => {
 
                 {/* Register button inside dropdown menu*/}
                 {props.currentPage === 'landing' && (
-                    <Link to={"/registration"} className="text-[#071E22] font-medium text-base">
+                    <Link to={"/registeration"} className="text-[#071E22] font-medium text-base">
                         <button onClick={() => { setIsOpen(!isOpen); }} className="pb-1 px-2 rounded-lg text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#22C3FF]">
                             Register
                         </button>
