@@ -58,10 +58,9 @@ function RegisterationPage() {
   function handleNext(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
-    setPage((curPage) => curPage+1);
-    // if(Object.keys(validate(formData)).length===0) {
-    //   setPage((curPage) => curPage+1);
-    // }
+    if(Object.keys(validate(formData)).length===0) {
+      setPage((curPage) => curPage+1);
+    }
   }
 
   const handleOk = () => {
