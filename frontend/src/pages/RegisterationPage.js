@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import eva_bg_small_lef from "../assets/images/eva_bg_small_lef.png";
-import ayushiQR from "../assets/images/ayushiQR.jpeg";
 import taranaQR from "../assets/images/taranaQR.jpeg";
 import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';
@@ -15,6 +14,11 @@ function RegisterationPage() {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
+  };
 
   const [formData, setFormData] = useState({
     name: "",
@@ -44,15 +48,17 @@ function RegisterationPage() {
       teamPhone: formData.teamPhone,
       teamEmail: formData.teamEmail
     }
-    setFormErrors(validate2(formData));
-    setIsSubmit(true);
-    console.log(regData);
-     Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
-    //  Axios.post("http://localhost:4000/api/v1/registration",regData)
+    if(isChecked) {
+      setFormErrors(validate2(formData));
+      setIsSubmit(true);
+      console.log(regData);
+      Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
+      //  Axios.post("http://localhost:4000/api/v1/registration",regData)
 
-    .then((res)=>{console.log(res)
-      setShowPopup(true)})
-    .catch((err)=>{console.log(err)})
+      .then((res)=>{console.log(res)
+        setShowPopup(true)})
+      .catch((err)=>{console.log(err)})
+    }
   }
 
   function handleNext(event) {
@@ -129,7 +135,11 @@ function RegisterationPage() {
     }
     else{
       return (
-        <div className="lg:mx-96 md:mx-48 mx-8 pb-0">
+        <div className="lg:mx-96 md:mx-48 mx-8">
+          <div className='pb-4'>
+          <input type="checkbox" className='form-checkbox text-[#22C3FF]' id='agree' checked={isChecked} onChange={handleCheckboxChange}/>
+          <label className='text-[#D4DFC7] pl-2 justify-center'>By registering you agree to our Privacy Policy and Terms & Conditions.</label>
+          </div>
           <div className="">
             <div className="flex justify-center float-left">
               <button onClick={() => {setPage((curPage) => curPage-1);}} className="lg:text-xl shadow bg-[#22C3FF] hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
@@ -146,14 +156,10 @@ function RegisterationPage() {
             </div>
           </div>
 
-          <div className="pb-8">
-            <p className="font-poppins text-[#ffffff] text-center lg:pt-8 lg:text-2xl pt-24 font-semibold text-2xl">Scan for Payment</p>
-            <div className='lg:float-left lg:pl-16 md:float-left md:pl-2'>
-              <img className="lg:mt-12 lg:w-60 md:mt-6 md:w-40 mt-6 w-56 mx-auto" src={ayushiQR} alt="QR Code 1" />
-              <p className="pt-2 font-poppins text-sm text-[#ffffff] text-center font-semibold">UPI ID: 9916708160@paytm</p>
-            </div>
-            <div className='lg:float-right lg:pr-16 md:float-right md:pr-2'>
-              <img className="lg:mt-12 lg:w-60 md:mt-6 md:w-40 mt-12 w-56 mx-auto" src={taranaQR} alt="QR Code 2" />
+          <div className="">
+            <p className="font-poppins text-[#ffffff] text-center lg:pt-16 lg:text-2xl pt-24 font-semibold text-2xl">Scan for Payment</p>
+            <div className='lg:mx-auto'>
+              <img className="lg:mt-4 lg:w-60 md:mt-6 md:w-40 mt-4 w-56 mx-auto" src={taranaQR} alt="QR Code 2" />
               <p className="pt-2 font-poppins text-sm text-[#ffffff] text-center font-semibold">UPI ID: taranashetty2002@oksbi</p>
             </div>
           </div>
@@ -181,7 +187,7 @@ function RegisterationPage() {
       <div>
         <Navbar currentPage='registration'/>
         {PageDisplay(page)}
-        <div className='bg-[#24263B] lg:pb-80 md:pb-16 pb-56'>{ButtonDisplay(page)}</div>
+        <div className='bg-[#24263B] lg:pb-56 md:pb-16 pb-24'>{ButtonDisplay(page)}</div>
         {showPopup && (
         <div className="popup bg-[#23354E] lg:w-[540px] lg:pt-12 md:w-[480px] md:pt-8 w-[320px] pt-0 rounded-xl">
             <img className="lg:float-left lg:w-48 lg:h-auto md:float-left md:w-40 md:h-auto justify-center w-20 h-auto" src={eva_bg_small_lef} alt="Registration eva" />
