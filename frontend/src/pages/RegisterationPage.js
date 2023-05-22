@@ -17,10 +17,15 @@ function RegisterationPage() {
   const [isSubmit, setIsSubmit] = useState(false);
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
+  const [showError, setShowError] = useState('');
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
+
+  function handleOkError() {
+    setShowError('');
+  }
 
   const [formData, setFormData] = useState({
     name: "",
@@ -59,13 +64,14 @@ function RegisterationPage() {
 
       .then((res)=>{console.log(res)
         setShowPopup(true)})
-      .catch((err)=>{console.log(err)})
+      .catch((err)=>{setShowError(err)})
     }
   }
 
   function handleNext(event) {
     event.preventDefault();
     setFormErrors(validate(formData));
+    // setPage((curPage) => curPage+1);
     if(Object.keys(validate(formData)).length===0) {
       setPage((curPage) => curPage+1);
     }
@@ -199,6 +205,20 @@ function RegisterationPage() {
           </div>
           <div className='lg:pt-20 lg:pb-8 md:pt-16 md:pb-6 pt-2'>
             <button onClick={handleOk} className="lg:text-xl shadow hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
+        {showError && (
+        <div className="popup bg-[#23354E] lg:w-[580px] lg:pt-12 md:w-[480px] md:pt-8 w-[320px] pt-0 rounded-xl">
+            <img className="lg:float-left lg:w-48 lg:h-auto md:float-left md:w-40 md:h-auto justify-center w-20 h-auto" src={eva_bg_small_lef} alt="Registration eva" />
+          <div>
+            <p className="font-poppins mt-4 lg:text-2xl md:text-xl text-md text-red-500 text-center">Team Name already Exists !!</p>
+          </div>
+          <div className='lg:pt-20 lg:pb-8 md:pt-16 md:pb-6 pt-2'>
+            <button onClick={handleOkError} className="lg:text-xl shadow hover:bg-[#D4DFC7] hover:text-black focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded text-sm" type="button">
               OK
             </button>
           </div>
