@@ -2,6 +2,7 @@ import React from 'react';
 
 function Landing() {
     return (
+        
         <div id="landing" className="h-screen">
             <section className="bg-black h-screen">
                 <div className="items-center justify-center h-screen">

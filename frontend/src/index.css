@@ -31,3 +31,12 @@ code {
     background-position: center;
     height: 100vh;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

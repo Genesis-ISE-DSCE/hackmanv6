@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import eva_bg_small_lef from '../assets/images/eva_bg_small_lef.png';
 import eva_bg_small_rig from '../assets/images/eva_bg_small_rig.png';
+import eva_main from '../assets/images/eva_main.jpg'
 
 function Counter(props) {
     const [countdown, setCountdown] = useState(props.initialCountdown);
@@ -20,7 +21,11 @@ function Counter(props) {
     const seconds = Math.floor(countdown % 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
     return(
-        <div id="landing" className="bg-[#24263B] lg:pb-32 lg:pt-24 md:pb-8 md:pt-8 pb-8 pt-16">
+       <>
+         <div id="landing"
+        
+        className="bg-[#24263B] lg:pb-32 lg:pt-24 md:pb-8 md:pt-8 pb-8 pt-16">
+            
             <section>
                 <div className="lg:items-center lg:justify-center md:items-center md:justify-center items-center justify-center">
                     <div className="lg:items-center lg:justify-center md:items-center md:justify-center items-center justify-center" style={{ position: "relative", top: "-30px" }}>
@@ -53,6 +58,7 @@ function Counter(props) {
                 </div>
             </div>
         </div>
+     </>
     );
 }
 

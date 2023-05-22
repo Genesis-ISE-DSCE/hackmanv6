@@ -1,5 +1,6 @@
 const Registration = require('../models/Registration');
 const CustomError = require("../utilis/CustomError")
+const nodemailer = require("nodemailer")
 
 exports.createRegistration = async (req, res,next) => {
   const { name, email, phone, college, teamName, teamMembers,teamEmail,teamPhone, transactionID ,upiID} = req.body;
@@ -86,3 +87,15 @@ exports.getAllRegistrations = async (req, res) => {
     res.status(500).json({ message: 'Server error', err:err });
   }
 };
+
+
+exports.getAllTeamNames =async(req,res) =>{
+  try{
+    const data = await Registration.find()
+    const teamnames=data.map((item)=>({teamName :item.teamName}))
+    res.json(teamnames)
+  }catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error', err:err });
+  }
+}
