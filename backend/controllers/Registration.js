@@ -39,3 +39,14 @@ exports.getAllRegistrations = async (req, res) => {
     res.status(500).json({ message: 'Server error', err:err });
   }
 };
+
+exports.getTeamNames = async (req, res) => {
+  try {
+    const registrations = await Registration.find({}, 'teamName');
+    const teamNames = registrations.map((registration) => registration.teamName);
+    res.json(teamNames);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+};

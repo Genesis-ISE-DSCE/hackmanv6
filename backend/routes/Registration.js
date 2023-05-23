@@ -1,11 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const registrationController = require('../controllers/Registration');
+const { createRegistration, getAllRegistrations, getTeamNames } = require('../controllers/Registration');
 
-// GET all registrations
-router.post('/registration', registrationController.createRegistration);
-
-// POST new registration
-router.get('/registration', registrationController.getAllRegistrations);
+router.post('/registration', createRegistration);
+router.get('/registration', getAllRegistrations);
+router.get('/', getTeamNames);
 
 module.exports = router;

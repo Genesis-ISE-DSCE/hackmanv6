@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
 const registration = require('./routes/Registration')
-app.use('/api/v1',registration)
+app.use('',registration)
 app.use(cookieParser());
 
 
