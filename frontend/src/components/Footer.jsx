@@ -12,10 +12,10 @@ function Footer() {
                         <h2 class="font-poppins text-white lg:text-3xl md:text-xl text-xl tracking-wider font-bold mb-1 sm:mb-2">Reach Out To Us</h2>
                         <div class="list-none mb-4 sm:mb-10">
                             <li>
-                                <p class="text-white text-xs lg:text-lg md:text-md hover:text-[#22C3FF]">Pankaj Garg: <a href="tel:">+911234567890</a></p>
+                                <p class="text-white text-xs lg:text-lg md:text-md hover:text-[#22C3FF]">Pankaj Garg: <a href="tel:">+91 9113630416</a></p>
                             </li>
                             <li>
-                                <p class="text-white text-xs lg:text-lg md:text-md hover:text-[#22C3FF]">Ananya M: <a href="tel:">+911234567890</a></p>
+                                <p class="text-white text-xs lg:text-lg md:text-md hover:text-[#22C3FF]">Ananya M: <a href="tel:">+91 7338498081</a></p>
                             </li>
                         </div>
                     </div>

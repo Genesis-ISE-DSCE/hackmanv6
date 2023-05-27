@@ -12,7 +12,8 @@ const Navbar = (props) => {
     // };
 
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5 py-1 lg:py-1 h-8.2 lg:h-18 md:h-17 flex justify-between items-center z-10">
+        <nav className="fixed top-0 left-0 right-0 bg-[#23354E] px-5 py-1 lg:py-1 h-8.2 lg:h-18 md:h-17 flex justify-between items-center z-10"
+        id="nav-logo">
 
             {/* Logo in navbar */}
             <a href="/"><img src={require('../assets/images/hackman_logo.png')} alt="Logo" className="h-4 md:h-7 lg:h-7 mt-2 mb-2 ml-1" /></a>
@@ -59,7 +60,7 @@ const Navbar = (props) => {
 
                 {/* Register button inside dropdown menu*/}
                 {props.currentPage === 'landing' && (
-                    <Link to={"/registration"} className="text-[#071E22] font-medium text-base">
+                    <Link to={"/registeration"} className="text-[#071E22] font-medium text-base">
                         <button onClick={() => { setIsOpen(!isOpen); }} className="pb-1 px-2 rounded-lg text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#22C3FF]">
                             Register
                         </button>

@@ -1,9 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const { createRegistration, getAllRegistrations, getTeamNames } = require('../controllers/Registration');
+const {createRegistration,getAllRegistrations,getAllTeamNames} = require('../controllers/Registration');
+const {isLoggedIn}=require("../middlewares/Admin")
 
-router.post('/registration', createRegistration);
-router.get('/registration', getAllRegistrations);
-router.get('/', getTeamNames);
+// GET all registrations
+router.route('/registration').post(createRegistration);
+
+router.route('/teamNames').get(getAllTeamNames)
+
+// POST new registration
+router.route('/registration').get(isLoggedIn,getAllRegistrations);
 
 module.exports = router;
