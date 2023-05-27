@@ -1,6 +1,7 @@
 const Registration = require('../models/Registration');
 const CustomError = require("../utilis/CustomError")
 const nodemailer = require("nodemailer")
+const num = 6123;
 
 exports.createRegistration = async (req, res,next) => {
   const { name, email, phone, college, teamName, teamMembers,teamEmail,teamPhone, transactionID ,upiID} = req.body;
@@ -48,10 +49,13 @@ if(team){
   return(next(new CustomError("teamName already choosen please find other name",401)))
 }
   // Generate uniqueId using current timestamp
-  const teamId = `hackman${Date.now()}`;
-  const teamNumber = await Registration.estimatedDocumentCount() +1;
-
   
+const teamNumber = await Registration.countDocuments() +1;
+// console.log(teamNumber);
+const id = num+teamNumber;
+// console.log(id);
+const teamId = `Hackman#${id}`;
+
 
   try {
    const registeration= await Registration.create({
