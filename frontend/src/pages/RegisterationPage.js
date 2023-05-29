@@ -18,6 +18,7 @@ function RegisterationPage() {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
   const [showError, setShowError] = useState('');
+  const [data,setData]=useState()
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -41,7 +42,7 @@ function RegisterationPage() {
     teamEmail: []
   });
 
-   function handleClick() {
+    function handleClick() {
     const regData = {
       name: formData.name,
       email: formData.email,
@@ -58,14 +59,36 @@ function RegisterationPage() {
     if(isChecked) {
       setFormErrors(validate2(formData));
       setIsSubmit(true);
-      console.log(regData);
-      Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
-      //  Axios.post("http://localhost:4000/api/v1/registration",regData)
+      // console.log(regData);
+      // Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
+      Axios.post("http://localhost:4000/api/v1/registration",regData)
+      // setData(response.data)
+        .then((res)=>{
+          const response = res.data.registeration;
+          // registeration
+          setShowPopup(true)
+          console.log("dineh")
+          sendMail(response)
+          // console.log(data)
+          })
+        
+          //  Axios.post("http://localhost:4000/api/v1/sendMail",email)
 
-      .then((res)=>{console.log(res)
-        setShowPopup(true)})
+          
       .catch((err)=>{setShowError(err)})
     }
+  }
+
+  function sendMail(response){
+    const emails=response.teamEmail;
+    emails.push(response.email)
+    const teamId =response.teamId
+    Axios.post("http://localhost:4000/api/v1/sendMail",{email:emails,teamId:teamId})
+    .then((res)=>{
+      console.log(res);
+    }).catch((error)=>{
+      console.log(error)
+    })
   }
 
   function handleNext(event) {
@@ -84,7 +107,7 @@ function RegisterationPage() {
   useEffect(() => {
     console.log(formErrors);
     if (Object.keys(formErrors).length === 0 && isSubmit){
-      console.log(formData);
+      // console.log(formData);
     }
   }, [formErrors, isSubmit, formData]);
 
