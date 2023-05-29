@@ -104,18 +104,17 @@ exports.getAllTeamNames =async(req,res) =>{
 
 
 exports.sendEmails = async(req,res)=>{
-  // let i=0
-  const {email, teamId}=req.body
-// for(i=0;i<email.length;i++){
-  // console.log(email[i])
+
+  const {email, teamId,teamName}=req.body
+
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 const msg = {
-  to: email, // Change to your recipient
-  from: 'genesis.hackman@gmail.com', // Change to your verified sender
+  to: email, 
+  from: 'genesis.hackman@gmail.com', 
   subject: 'Registration Confirmation - HACKMAN v6.0',
   html: ` <p>Dear Participant,</p>
-  <p>Thank you for registering for HACKMAN v6.0! We are delighted to have you as a participant in this exciting event. This email serves as an acknowledgment of your successful registration.</p>
-  <p>Please note that your team ID for the event is: <strong>${teamId}</strong>. Kindly keep this information handy for any future correspondence related to the event.</p>
+  <p>Your team ${teamName} has sucessfully registered for HACKMAN v6.0! We are delighted to have you as a participant in this exciting event.</p>
+  <p>Please note that your team ID for the event is: <strong>${teamId}</strong>.</p>
   <p>To stay updated with the latest information, updates, and guidelines regarding HACKMAN v6.0, please visit our official website: <a href="https://www.hackman.in/">https://www.hackman.in/</a> and follow us on Instagram <a href="https://www.instagram.com/WEAREHACKMAN">@WEAREHACKMAN</a>. You will find comprehensive details about the event, including the agenda, rules, and FAQs.</p>
   <p>In addition to the website, we would like to draw your attention to the following essential documents that you should familiarize yourself with:</p>
   <ul>
@@ -124,7 +123,7 @@ const msg = {
     <li>Instructions: <a href="https://docs.google.com/document/d/1g7knadlcujSKsZiWHXIFr48dR9u8Pcc5Jl5wGR0U2Qk/edit?usp=sharing">https://docs.google.com/document/d/1g7knadlcujSKsZiWHXIFr48dR9u8Pcc5Jl5wGR0U2Qk/edit?usp=sharing</a></li>
   </ul>
   <p>These documents contain crucial information regarding the event, participant guidelines, and other important details. We encourage you to review them thoroughly to ensure a smooth and successful participation experience.</p>
-  <p>If you have any queries or require further assistance, please feel free to reach out to our support team at <a href="mailto:ise.genesis.dsce@gmail.com">ise.genesis.dsce@gmail.com</a>. We are here to help and ensure that you have a remarkable experience throughout the HACKMAN v6.0 event.</p>
+  <p>If you have any queries or require further assistance, please feel free to reach out to our support team at <a href="mailto:genesis.hackman@gmail.com">genesis.hackman@gmail.com</a>. We are here to help and ensure that you have a remarkable experience throughout the HACKMAN v6.0 event.</p>
   <p>Once again, thank you for joining us in HACKMAN v6.0. We look forward to your active participation and wish you the best of luck in the upcoming challenges!</p>
   <p>Best regards,</p>
   <p>Team HACKMAN,<br>Dept of ISE, DSCE<br>Bangalore - 560078</p>

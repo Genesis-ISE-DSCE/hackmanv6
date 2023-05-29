@@ -83,7 +83,8 @@ function RegisterationPage() {
     const emails=response.teamEmail;
     emails.push(response.email)
     const teamId =response.teamId
-    Axios.post("http://localhost:4000/api/v1/sendMail",{email:emails,teamId:teamId})
+    const teamName=response.teamName
+    Axios.post("http://localhost:4000/api/v1/sendMail",{email:emails,teamId:teamId,teamName:teamName})
     .then((res)=>{
       console.log(res);
     }).catch((error)=>{
