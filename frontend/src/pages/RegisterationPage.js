@@ -60,8 +60,8 @@ function RegisterationPage() {
       setFormErrors(validate2(formData));
       setIsSubmit(true);
       // console.log(regData);
-      // Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
-      Axios.post("http://localhost:4000/api/v1/registration",regData)
+      Axios.post("https://hackmanv6.onrender.com/api/v1/registration",regData)
+      // Axios.post("http://localhost:4000/api/v1/registration",regData)
       // setData(response.data)
         .then((res)=>{
           const response = res.data.registeration;
@@ -84,7 +84,7 @@ function RegisterationPage() {
     emails.push(response.email)
     const teamId =response.teamId
     const teamName=response.teamName
-    Axios.post("http://localhost:4000/api/v1/sendMail",{email:emails,teamId:teamId,teamName:teamName})
+    Axios.post("https://hackmanv6.onrender.com/api/v1/sendMail",{email:emails,teamId:teamId,teamName:teamName})
     .then((res)=>{
       console.log(res);
     }).catch((error)=>{
