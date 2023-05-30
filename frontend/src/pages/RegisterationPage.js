@@ -193,6 +193,8 @@ function RegisterationPage() {
             <div className='lg:mx-auto'>
               <img className="lg:mt-4 lg:w-60 md:mt-6 md:w-40 mt-4 w-56 mx-auto" src={taranaQR} alt="QR Code 2" />
               <p className="pt-2 font-poppins text-sm text-[#ffffff] text-center font-semibold">UPI ID: taranashetty2002@oksbi</p>
+              <p className="pt-2 font-poppins text-sm text-[#22C3FF] text-center font-semibold">Pay ₹600 per team</p>
+
             </div>
           </div>
         </div>
