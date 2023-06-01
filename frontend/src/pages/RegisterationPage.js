@@ -2,8 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import eva_bg_small_lef from "../assets/images/eva_bg_small_lef.png";
 import taranaQR from "../assets/images/taranaQR.jpeg";
-import privacypolicy from "../assets/documents/Privacy Policy.pdf";
-import termsconditions from "../assets/documents/Terms and Conditions.pdf";
+import termsconditions from "../assets/documents/T&C - HACKMAN.pdf";
+import codeofconduct from "../assets/documents/COC - HACKMAN.pdf";
+import instructions from "../assets/documents/Instructions- HACKMAN.pdf";
 import Navbar from '../components/Navbar';
 import Registeration from '../components/Registeration';
 import Registeration2 from '../components/Registeration2';
@@ -18,7 +19,6 @@ function RegisterationPage() {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
   const [showError, setShowError] = useState('');
-  const [data,setData]=useState()
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
@@ -170,7 +170,7 @@ function RegisterationPage() {
         <div className="lg:mx-96 md:mx-48 mx-8">
           <div className='pb-4'>
           <input type="checkbox" className='form-checkbox text-[#22C3FF]' id='agree' checked={isChecked} onChange={handleCheckboxChange}/>
-          <label className='text-[#D4DFC7] pl-2 justify-center'>By registering you agree to our <a href={privacypolicy} rel='noreferrer noopener' target="_blank" className='text-green-300 text-decoration-line: underline'>Privacy Policy</a> and <a href={termsconditions} rel='noreferrer noopener' target="_blank" className='text-green-300 text-decoration-line: underline'>Terms & Conditions</a>.</label>
+          <label className='text-[#D4DFC7] pl-2 justify-center'>By registering you agree to our <a href={instructions} rel='noreferrer noopener' target="_blank" className='text-green-300 text-decoration-line: underline'>Instructions</a> , <a href={termsconditions} rel='noreferrer noopener' target="_blank" className='text-green-300 text-decoration-line: underline'>Terms & Conditions</a> and <a href={codeofconduct} rel='noreferrer noopener' target="_blank" className='text-green-300 text-decoration-line: underline'>Code of Conduct</a></label>
           </div>
           <div className="">
             <div className="flex justify-center float-left">
