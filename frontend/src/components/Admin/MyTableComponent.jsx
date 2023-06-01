@@ -67,6 +67,10 @@ function MyTableComponent() {
         accessor: 'college', // accessor is the "key" in the data
       },
       {
+        Header:'Leader',
+        accessor:'name'
+      },
+      {
         Header:'teamMembers',
         accessor:'teamMembers'
       },
