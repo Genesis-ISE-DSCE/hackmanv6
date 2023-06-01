@@ -50,7 +50,12 @@ if(team){
   return(next(new CustomError("teamName already choosen please find other name",401)))
 }
   // Generate uniqueId using current timestamp
-  const teamId = `hackman${Date.now()}`;
+  const documentNumber = await Registration.countDocuments() +1;
+  const num = 6123
+// console.log(teamNumber);
+const id = num+documentNumber;
+// console.log(id);
+const teamId = `Hackman#${id}`;
   const teamNumber = await Registration.estimatedDocumentCount() +1;
 
   
