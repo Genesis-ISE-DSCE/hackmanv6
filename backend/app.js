@@ -19,8 +19,8 @@ app.use(cookieParser())
 const registration = require('./routes/Registration');
 const admin = require("./routes/Admin");
 
-app.use('/api/v1',registration);
-app.use("/api/v1",admin)
+app.use('/api/v1', registration);
+app.use("/api/v1", admin)
 app.use(cookieParser());
 
 

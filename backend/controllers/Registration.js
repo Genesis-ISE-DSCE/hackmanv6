@@ -71,9 +71,9 @@ exports.createRegistration = async (req, res, next) => {
       phone,
       college,
       teamName,
-      teamMembers:teamMembersArray,
-      teamEmail:teamEmailsArray,
-      teamPhone:teamPhonesArray,
+      teamMembers: teamMembersArray,
+      teamEmail: teamEmailsArray,
+      teamPhone: teamPhonesArray,
       transactionID,
       upiID,
       teamNumber
