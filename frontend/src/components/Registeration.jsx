@@ -21,7 +21,7 @@ function Registeration({formData, setFormData, formErrors}) {
                 <div className="lg:mx-96 md:mx-48 mx-8">
                 <div className="lg:w-full lg:pt-12 md:w-full md:items-center md-center md:pt-8 items-center pt-10 place-content-center">
                     <div className="pb-2">
-                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Name :</label>
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Leader Name :</label>
                     </div>
                     <div className="">
                         <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-name" name="name" value={formData.name || ""} onChange={handleChange} type="text" placeholder="Enter your name" required></input>
@@ -31,7 +31,7 @@ function Registeration({formData, setFormData, formErrors}) {
 
                 <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
                     <div className="pb-2">
-                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Email :</label>
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Leader Email :</label>
                     </div>
                     <div className="">
                         <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500 h-10 p-2" id="inline-email" name="email" value={formData.email || ""} onChange={handleChange} type="mail" placeholder="Enter your email" required></input>
@@ -41,7 +41,7 @@ function Registeration({formData, setFormData, formErrors}) {
 
                 <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
                     <div className="pb-2">
-                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Phone :</label>
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-name">Leader Phone :</label>
                     </div>
                     <div className="">
                         <input className="w-full bg-[#23354E] appearance-none border-2 border-[#23354E] rounded focus:text-gray-900 text-[#D4DFC7] leading-tight focus:outline-none focus:bg-white focus:border-[#22C3FF]-500" id="inline-full-name" name="phone" value={formData.phone || ""} onChange={handleChange} type="tel" placeholder="Enter your phone number" required></input>
