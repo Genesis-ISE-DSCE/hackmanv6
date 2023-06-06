@@ -55,7 +55,7 @@ function Registration2({formData, setFormData, formErrors}) {
 
                 <div className="lg:w-full lg:pt-8 md:w-full md:items-center md-center md:pt-6 items-center pt-6 place-content-center">
                     <div className="">
-                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Team Members :</label>
+                        <label className="lg:text-2xl md:text-2xl text-sm text-white font-poppins font-semibold mb-1 pr-4" for="inline-email">Team Members <span className="text-sm text-[#D4DFC7]">(excluding leader)</span> :</label>
                     </div>
                     {[...Array(numInputs)].map((_, index) => (
                         <div className="pt-4">

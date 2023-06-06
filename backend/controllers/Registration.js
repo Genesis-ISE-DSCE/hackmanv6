@@ -43,7 +43,7 @@ exports.createRegistration = async (req, res, next) => {
   const team = await Registration.findOne({ teamName });
 
   if (user) {
-    return (next(new CustomError("email already rejistered", 401)))
+    return (next(new CustomError("email already registered", 401)))
   }
 
   if (team) {
@@ -51,8 +51,8 @@ exports.createRegistration = async (req, res, next) => {
   }
   // Generate uniqueId using current timestamp
   const documentNumber = await Registration.countDocuments() + 1;
-  const num = 6123
-  // console.log(teamNumber);
+  const num = 6124
+  // console.log(documentNumber);
   const id = num + documentNumber;
   // console.log(id);
   const teamId = `Hackman#${id}`;
@@ -60,7 +60,7 @@ exports.createRegistration = async (req, res, next) => {
 
 
 
-  
+
 
 
   try {
