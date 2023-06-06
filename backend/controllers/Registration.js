@@ -116,22 +116,30 @@ exports.sendEmails = async(req,res)=>{
 const msg = {
   to: email, 
   from: 'genesis.hackman@gmail.com', 
-  subject: 'Registration Confirmation - HACKMAN v6.0',
-  html: ` <p>Dear Participant,</p>
-  <p>Your team ${teamName} has sucessfully registered for HACKMAN v6.0! We are delighted to have you as a participant in this exciting event.</p>
-  <p>Please note that your team ID for the event is: <strong>${teamId}</strong>.</p>
-  <p>To stay updated with the latest information, updates, and guidelines regarding HACKMAN v6.0, please visit our official website: <a href="https://www.hackman.in/">https://www.hackman.in/</a> and follow us on Instagram <a href="https://www.instagram.com/WEAREHACKMAN">@WEAREHACKMAN</a>. You will find comprehensive details about the event, including the agenda, rules, and FAQs.</p>
-  <p>In addition to the website, we would like to draw your attention to the following essential documents that you should familiarize yourself with:</p>
-  <ul>
-    <li>Terms & Conditions: <a href="https://docs.google.com/document/d/15pbRd7dQHS9YJpX38rQ4fQU10ND1DDdRWnFVLW5LoVs/edit?usp=sharing">https://docs.google.com/document/d/15pbRd7dQHS9YJpX38rQ4fQU10ND1DDdRWnFVLW5LoVs/edit?usp=sharing</a></li>
-    <li>Code of Conduct: <a href="https://docs.google.com/document/d/18VNYKuQwPtmTV4oOvJd9w_K_I4RFbIoWgPX6yIZgBR8/edit?usp=sharing">https://docs.google.com/document/d/18VNYKuQwPtmTV4oOvJd9w_K_I4RFbIoWgPX6yIZgBR8/edit?usp=sharing</a></li>
-    <li>Instructions: <a href="https://docs.google.com/document/d/1g7knadlcujSKsZiWHXIFr48dR9u8Pcc5Jl5wGR0U2Qk/edit?usp=sharing">https://docs.google.com/document/d/1g7knadlcujSKsZiWHXIFr48dR9u8Pcc5Jl5wGR0U2Qk/edit?usp=sharing</a></li>
-  </ul>
-  <p>These documents contain crucial information regarding the event, participant guidelines, and other important details. We encourage you to review them thoroughly to ensure a smooth and successful participation experience.</p>
-  <p>If you have any queries or require further assistance, please feel free to reach out to our support team at <a href="mailto:genesis.hackman@gmail.com">genesis.hackman@gmail.com</a>. We are here to help and ensure that you have a remarkable experience throughout the HACKMAN v6.0 event.</p>
-  <p>Once again, thank you for joining us in HACKMAN v6.0. We look forward to your active participation and wish you the best of luck in the upcoming challenges!</p>
+  subject: 'Confirmation of Registration - HACKMAN v6.0',
+  html: `     <p>Dear Participant,</p>
+  <br>
+  <p>Thank you for registering for HACKMAN v6.0! We are delighted to have you and your team <strong>${teamName}</strong> as a participant in this exciting event. This email serves as an acknowledgment of your successful registration.</p>
+  <br>
+  <p>Please make a note of your team ID: <strong> ${teamId} </strong>. Keep this information accessible for any future communication related to the event.</p>
+  <br>
+  <p>To stay updated with the latest information for HACKMAN v6.0, please visit our official website at <a href="https://www.hackman.in/">https://www.hackman.in/</a> and follow us on Instagram <a href="https://www.instagram.com/WEAREHACKMAN">@WEAREHACKMAN</a>.</p>
+  <br>
+  <p>Remember to join the WhatsApp group and invite your team members to join as well:</p>
+  <a href="https://chat.whatsapp.com/CRWra3T7CzU3Rhb6iFnoAa">https://chat.whatsapp.com/CRWra3T7CzU3Rhb6iFnoAa</a>
+  <br>
+  <p>In addition to the website, we would like to bring your attention to the following important documents that you should familiarize yourself with. These documents contain vital information about the event, guidelines, and other important details.</p>
+  <br>
+  <p>Guidelines:</p>
+  <a href="https://drive.google.com/drive/folders/1WxvOvz5Z2V3S5QfJm9bBUIwu282KHX-w?usp=sharing">https://drive.google.com/drive/folders/1WxvOvz5Z2V3S5QfJm9bBUIwu282KHX-w?usp=sharing</a>
+  <br>
+  <p>If you have any queries, please feel free to reach out to <a href="mailto:ise.genesis.dsce@gmail.com">ise.genesis.dsce@gmail.com</a>. We are here to help you. We eagerly anticipate your active participation and wish you the best of luck in the upcoming challenges!</p>
+  <br>
   <p>Best regards,</p>
-  <p>Team HACKMAN,<br>Dept of ISE, DSCE<br>Bangalore - 560078</p>
+  <p>Team HACKMAN,</p>
+  <p>Dept of ISE, DSCE</p>
+  <p>Bangalore - 560078</p>
+
   `,
   
 }
