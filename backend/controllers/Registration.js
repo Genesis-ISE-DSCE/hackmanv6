@@ -57,10 +57,10 @@ exports.createRegistration = async (req, res, next) => {
   // console.log(id);
   const teamId = `Hackman#${id}`;
   const teamNumber = await Registration.estimatedDocumentCount() + 1;
-  const teamMembersArray = teamMembers.split(',').map((member) => member.trim());
-  const teamEmailsArray = teamEmail.split(',').map((member) => member.trim());
-  const teamPhonesArray = teamPhone.split(',').map((member) => member.trim());
 
+
+
+  
 
 
   try {
@@ -71,9 +71,9 @@ exports.createRegistration = async (req, res, next) => {
       phone,
       college,
       teamName,
-      teamMembers: teamMembersArray,
-      teamEmail: teamEmailsArray,
-      teamPhone: teamPhonesArray,
+      teamMembers,
+      teamEmail,
+      teamPhone,
       transactionID,
       upiID,
       teamNumber
@@ -157,11 +157,11 @@ exports.sendMassEmails = async (req, res) => {
 
     registrations.forEach((registration) => {
       const emailsToSend = [registration.email, ...registration.teamEmail];
-      console.log(emailsToSend)
+      // console.log(emailsToSend)
       const teamId = registration.teamId;
       const teamName = registration.teamName;
       emailsToSend.forEach((email) => {
-        console.log(email)
+        // console.log(email)
         const msg = {
           to: email,
           from: 'genesis.hackman@gmail.com',
