@@ -168,30 +168,29 @@ exports.sendMassEmails = async (req, res) => {
       // console.log(emailsToSend)
       const teamId = registration.teamId;
       const teamName = registration.teamName;
-      emailsToSend.forEach((email) => {
-        // console.log(email)
-        const msg = {
-          to: email,
-          from: 'genesis.hackman@gmail.com',
-          subject: 'Registration Confirmation - HACKMAN v6.0',
-          html: `<p>Dear Participant,</p>
+
+      const msg = {
+        to: emailsToSend,
+        from: 'genesis.hackman@gmail.com',
+        subject: 'Registration Confirmation - HACKMAN v6.0',
+        html: `<p>Dear Participant,</p>
 
           <!-- TODO: Email content -->
           
           <p>Your team ${teamName} has sucessfully registered for HACKMAN v6.0! We are delighted to have you as a participant in this exciting event.</p>
   <p>Please note that your team ID for the event is: <strong>${teamId}</strong>.</p>
           `,
-        };
+      };
 
-        sgMail
-          .send(msg)
-          .then(() => {
-            console.log(`Email sent to ${email}`);
-          })
-          .catch((error) => {
-            console.error(error);
-          });
-      });
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log(`Email sent to ${email}`);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
     });
 
     res.status(200).json({ message: 'Emails sent successfully' });
