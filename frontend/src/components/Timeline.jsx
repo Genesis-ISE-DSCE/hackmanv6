@@ -8,11 +8,6 @@ const Timeline = () => {
       link: "/registeration",
     },
     {
-      date: "June 18th-22nd",
-      title: "Idea Submission",
-      link: "/notopen",
-    },
-    {
       date: "June 24th-25th",
       title: "Hack Begins",
       link: "/notopen",
@@ -33,9 +28,8 @@ const Timeline = () => {
 
         {/* Timeline circles */}
         <div className="absolute top-0 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-0 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
-        <div className="absolute top-1/4 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-1/4 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
-        <div className="absolute top-1/2 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-1/2 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
-        <div className="absolute top-3/4 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-3/4 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
+        <div className="absolute top-1/3 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-1/4 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
+        <div className="absolute top-2/3 w-6 h-6 rounded-full bg-[#22C3FF] left-1/2 mt-1/2 hidden lg:block" style={{ transform: "translate(-50%, -50%)" }}></div>
         <div className="absolute h-full border-2 border-[#22C3FF] left-1/2 transform -translate-x-1/2"></div>
 
         {/* Timeline for small and medium devices */}
@@ -52,7 +46,7 @@ const Timeline = () => {
                     href={event.link}
                     className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#24263B]"
                   >
-                    Link &gt;
+                    {/* Link &gt; */}
                   </a>
                 </div>
               </div>
@@ -73,7 +67,7 @@ const Timeline = () => {
               <p className="lg:text-2xl lg:pt-0 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
               <p className="lg:text-lg lg:pt-2 md:text-0.5xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.date}</p>
               <a href={event.link} className="lg:text-0.5xl md:text-0.25xl font-bold mb-8 text-center justify-center text-1xl text-[#22C3FF] hover:text-[#D4DFC7]">
-                Link &gt;
+                {/* Link &gt; */}
               </a>
             </div>
           </div>
