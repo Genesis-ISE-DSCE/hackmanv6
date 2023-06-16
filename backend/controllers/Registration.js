@@ -51,7 +51,7 @@ if(team){
 }
   // Generate uniqueId using current timestamp
   const documentNumber = await Registration.countDocuments() +1;
-  const num = 6124
+  const num = 7124
 // console.log(documentNumber);
 const id = num+documentNumber;
 // console.log(id);
