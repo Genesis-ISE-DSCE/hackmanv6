@@ -57,7 +57,7 @@ exports.createRegistration = async (req, res, next) => {
 
 
   const documentNumber = await Registration.countDocuments() +1;
-  const num = 7124
+  const num = 7001
 // console.log(documentNumber);
 const id = num+documentNumber;
 // console.log(id);
@@ -161,40 +161,40 @@ exports.sendEmails = async (req, res) => {
 }
 
 exports.sendMassEmails = async (req, res) => {
+  const {body, subject} = req.body
+
 
   try {
     const registrations = await Registration.find();
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    const merged=[]
 
     registrations.forEach((registration) => {
-      const emailsToSend = [registration.email, ...registration.teamEmail];
-      // console.log(emailsToSend)
-      const teamId = registration.teamId;
-      const teamName = registration.teamName;
-
-      const msg = {
-        to: emailsToSend,
-        from: 'genesis.hackman@gmail.com',
-        subject: 'Registration Confirmation - HACKMAN v6.0',
-        html: `<p>Dear Participant,</p>
-
-          <!-- TODO: Email content -->
-          
-          <p>Your team ${teamName} has sucessfully registered for HACKMAN v6.0! We are delighted to have you as a participant in this exciting event.</p>
-  <p>Please note that your team ID for the event is: <strong>${teamId}</strong>.</p>
-          `,
-      };
-
-      sgMail
-        .send(msg)
-        .then(() => {
-          console.log(`Email sent to ${email}`);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-
+      const emails = [registration.email, ...registration.teamEmail];
+      merged.push(emails)
     });
+   
+   const emailsToSend= merged.flat(1)
+ 
+   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+  const msg = {
+    to: emailsToSend,
+    from: 'genesis.hackman@gmail.com',
+    subject: subject,
+    html: body
+
+  }
+  // console.log(msg.to.length)
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log(`Email sent`)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+
+     
 
     res.status(200).json({ message: 'Emails sent successfully' });
   } catch (err) {
