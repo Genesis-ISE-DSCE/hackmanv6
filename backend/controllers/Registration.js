@@ -184,15 +184,15 @@ exports.sendMassEmails = async (req, res) => {
     html: body
 
   }
-  // console.log(msg.to.length)
-  sgMail
-    .send(msg)
-    .then(() => {
-      console.log(`Email sent`)
-    })
-    .catch((error) => {
-      console.error(error)
-    })
+  console.log(msg.to.length)
+  // sgMail
+  //   .send(msg)
+  //   .then(() => {
+  //     console.log(`Email sent`)
+  //   })
+  //   .catch((error) => {
+  //     console.error(error)
+  //   })
 
      
 
