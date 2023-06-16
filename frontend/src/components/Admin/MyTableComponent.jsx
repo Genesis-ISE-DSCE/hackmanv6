@@ -1,44 +1,52 @@
-import React, { useEffect ,useState} from 'react';
-import { useTable,useBlockLayout, useResizeColumns } from 'react-table';
-import {useLocation, useNavigate} from "react-router-dom"
+import React, { useEffect, useState } from 'react';
+import { useTable, useBlockLayout, useResizeColumns } from 'react-table';
+import { useLocation, useNavigate } from "react-router-dom"
 import Axios from 'axios';
 import './table.css'
 
 function MyTableComponent() {
   const location = useLocation();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
+  const [count, setCount] = useState(0);
 
-  const authenticated=location.state;
-  const [dat,setDat]=useState([
+  const authenticated = location.state;
+  const [dat, setDat] = useState([
     {
-      college : "daka",
-      email : "dinesh1x@gmail.com",
-      name : "heisdinesh",
+      college: "daka",
+      email: "dinesh1x@gmail.com",
+      name: "heisdinesh",
       phone: "7337735382",
       teamEmail: ['s@gmail.com', 'dyfgyucb@gmail.com'],
       teamId: "hackman1684142197776",
-      teamMembers : ['s', 'bdebhbk'],
+      teamMembers: ['s', 'bdebhbk'],
       teamName: "think\\_tank",
-      teamPhone:['489652332', '87526'],
+      teamPhone: ['489652332', '87526'],
       transactionID: "dedewfewgfbwef",
       upiID: "frhfbrfrifr"
     }
   ]);
-  
-  
-  const [recieved,setRecieved]=useState(false);
+
+
+  const [recieved, setRecieved] = useState(false);
   useEffect(() => {
     const tokenString = sessionStorage.getItem('token');
     const userToken = JSON.parse(tokenString);
     // console.log(userToken)
     // Axios.get("http://localhost:4000/api/v1/registration",
     //  { headers: {"Authorization" : userToken}} )
-    Axios.get("https://hackmanv6.onrender.com/api/v1/registration", { headers: {"Authorization" : userToken}})
+    Axios.get("https://hackmanv6.onrender.com/api/v1/registration", { headers: { "Authorization": userToken } })
       .then(response => {
         // Update the data array or state variable with the fetched data
         // Example: setData(response.data)
-        setDat(response.data)
+        const updatedData = response.data.map((item, index) => {
+          return {
+            ...item,
+            count: index + 1,
+          };
+        });
+        setDat(updatedData);
         setRecieved(true);
+        setCount(response.data.length);
         // console.log("authenticated")
         // console.log(response.data)
       })
@@ -51,56 +59,56 @@ function MyTableComponent() {
   const columns = React.useMemo(
     () => [
       {
-        Header: 's.no',
-        accessor: 'teamNumber', // accessor is the "key" in the data
+        Header: 'Number',
+        accessor: 'count',
+        Cell: ({ row }) => row.index + 1,
       },
+      // {
+      //   Header: 's.no',
+      //   accessor: 'teamNumber',
+      // },
       {
         Header: 'teamName',
-        accessor: 'teamName', // accessor is the "key" in the data
+        accessor: 'teamName',
       },
       {
         Header: 'teamId',
-        accessor: 'teamId', // accessor is the "key" in the data
+        accessor: 'teamId',
       },
       {
         Header: 'college',
-        accessor: 'college', // accessor is the "key" in the data
+        accessor: 'college',
       },
       {
-        Header:'Leader',
-        accessor:'name'
+        Header: 'Leader',
+        accessor: 'name'
       },
       {
-        Header:'teamMembers',
-        accessor:'teamMembers'
+        Header: 'teamMembers',
+        accessor: 'teamMembers'
       },
       {
         Header: 'email',
-        accessor: 'email', // accessor is the "key" in the data
+        accessor: 'email',
       },
       {
         Header: 'phone',
-        accessor: 'phone', // accessor is the "key" in the data
+        accessor: 'phone',
       },
       {
-        Header:'teamPhone',
-        accessor:'teamPhone'
-      },{
-        Header:'teamEmail',
-        accessor:'teamEmail'
+        Header: 'teamPhone',
+        accessor: 'teamPhone'
+      }, {
+        Header: 'teamEmail',
+        accessor: 'teamEmail'
       },
       {
-        Header:'transactionID',
-        accessor:'transactionID'
-      },{
-        Header:'upiID',
-        accessor:'upiID'
+        Header: 'transactionID',
+        accessor: 'transactionID'
+      }, {
+        Header: 'upiID',
+        accessor: 'upiID'
       },
-      
-      // {
-      //   Header: 'Column 2',
-      //   accessor: 'col2',
-      // },
     ],
     [dat]
   )
@@ -122,36 +130,36 @@ function MyTableComponent() {
   });
 
   return (
-  <>{
-    true ?  <div>
-    {recieved ? <table {...getTableProps()}>
-      <thead>
-        {headerGroups.map(headerGroup => (
-          <tr {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+    <>{
+      true ? <div>
+        {recieved ? <table {...getTableProps()}>
+          <thead>
+            {headerGroups.map(headerGroup => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map(column => (
+                  <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
-        {rows.map((row,rowIndex) => {
-          prepareRow(row);
-          return (
-            <tr {...row.getRowProps()} key={rowIndex}>
-              {row.cells.map((cell,cellIndex) => (
-                <td {...cell.getCellProps()} key={cellIndex}>
-                  {Array.isArray(cell.value) ? cell.value.join(", ") : cell.value}
-                  </td>
-              ))}
-            </tr>
-          );
-        })}
-      </tbody>
-    </table> : <p>Loading please wait......</p>}
-   </div> : <p>login first</p>
-  }
-  </>
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row, rowIndex) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()} key={rowIndex}>
+                  {row.cells.map((cell, cellIndex) => (
+                    <td {...cell.getCellProps()} key={cellIndex}>
+                      {Array.isArray(cell.value) ? cell.value.join(", ") : cell.value}
+                    </td>
+                  ))}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table> : <p>Loading please wait......</p>}
+      </div> : <p>login first</p>
+    }
+    </>
   );
 }
 

@@ -50,16 +50,19 @@ exports.createRegistration = async (req, res, next) => {
     return (next(new CustomError("teamName already choosen please find other name", 401)))
   }
   // Generate uniqueId using current timestamp
-  const documentNumber = await Registration.countDocuments() + 1;
-  const num = 6124
-  // console.log(documentNumber);
-  const id = num + documentNumber;
-  // console.log(id);
-  const teamId = `Hackman#${id}`;
-  const teamNumber = await Registration.estimatedDocumentCount() + 1;
 
 
 
+
+
+
+  const documentNumber = await Registration.countDocuments() +1;
+  const num = 7124
+// console.log(documentNumber);
+const id = num+documentNumber;
+// console.log(id);
+const teamId = `Hackman#${id}`;
+  const teamNumber = await Registration.estimatedDocumentCount() +1;
 
 
 
