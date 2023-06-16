@@ -1,11 +1,11 @@
 import './App.css';
 import LandingPage from './pages/LandingPage';
-import RegisterationPage from './pages/RegisterationPage';
+// import RegisterationPage from './pages/RegisterationPage';
 import Admin from "./pages/Admin"
 import AdminLogin from './pages/AdminLogin';
-import NotOpen from './components/NotOpen';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MassMail from './pages/MassMail';
+import RegClosedPage from './pages/RegClosedPage';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route  path="/adminlogin" element={<AdminLogin />}/>
         <Route  path="/participants-list" element={<Admin />} />
         <Route  path="/mass-mail" element={<MassMail />} />
-        {/* <Route  path="/notopen" element={<NotOpen />}/> */}
+        <Route  path="/registeration" element={<RegClosedPage />}/>
       </Routes>
     </BrowserRouter>
   );
