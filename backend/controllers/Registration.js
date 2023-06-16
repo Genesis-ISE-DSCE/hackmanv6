@@ -175,6 +175,7 @@ exports.sendMassEmails = async (req, res) => {
     });
    
    const emailsToSend= merged.flat(1)
+  //  const test =['iamdineshbot@gmail.com','dinesh25282@gmail.com']
  
    sgMail.setApiKey(process.env.SENDGRID_API_KEY)
   const msg = {
@@ -184,15 +185,15 @@ exports.sendMassEmails = async (req, res) => {
     html: body
 
   }
-  console.log(msg.to.length)
-  // sgMail
-  //   .send(msg)
-  //   .then(() => {
-  //     console.log(`Email sent`)
-  //   })
-  //   .catch((error) => {
-  //     console.error(error)
-  //   })
+  // console.log(msg)
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log(`Email sent`)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
 
      
 

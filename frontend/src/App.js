@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route  path="/" element={<LandingPage />}/>
-        {/* <Route  path="/registeration" element={<RegisterationPage />}/> */}
+        <Route  path="/registeration" element={<RegisterationPage />}/>
         <Route  path="/adminlogin" element={<AdminLogin />}/>
         <Route  path="/participants-list" element={<Admin />} />
         <Route  path="/mass-mail" element={<MassMail />} />

@@ -4,7 +4,10 @@ const MassMail = () => {
     const [inputs,setInputs] =useState({})
     const handleSubmit=(event)=>{
         event.preventDefault()
-        console.log(inputs)
+        // console.log(inputs)
+        axios.post("http://localhost:4000/api/v1/sendMassMail",inputs)
+        .then((res)=>console.log(res))
+        .catch((error)=>console.log(error))
 
     }
     const handleChange=(event)=>{

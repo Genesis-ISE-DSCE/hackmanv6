@@ -9,7 +9,7 @@ router.route('/registration').post(createRegistration);
 router.route('/teamNames').get(getAllTeamNames)
 
 router.route('/sendMail').post(sendEmails)
-router.route('/sendMassMail').post(sendMassEmails)
+router.route('/sendMassMail').post(isLoggedIn,sendMassEmails)
 
 // POST new registration
 router.route('/registration').get(isLoggedIn, getAllRegistrations);
