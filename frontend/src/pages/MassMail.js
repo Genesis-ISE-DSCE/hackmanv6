@@ -5,7 +5,7 @@ const MassMail = () => {
     const handleSubmit=(event)=>{
         event.preventDefault()
         // console.log(inputs)
-        axios.post("http://localhost:4000/api/v1/sendMassMail",inputs)
+        axios.post("https://hackmanv6.onrender.com/api/v1/sendMassMail",inputs)
         .then((res)=>console.log(res))
         .catch((error)=>console.log(error))
 
@@ -18,7 +18,8 @@ const MassMail = () => {
   return (
     <div>
         <div>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}
+            className="flex gap-4 flex-col">
                 <input type="text" placeholder="Subject" name="subject" value={inputs.subject || ""} onChange={handleChange}/>
                 <input type="text" placeholder="Body" name="body" value={inputs.body || ""} onChange={handleChange} />
                 <button onClick={handleSubmit}>Send</button>

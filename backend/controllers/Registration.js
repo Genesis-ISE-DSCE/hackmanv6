@@ -57,7 +57,7 @@ exports.createRegistration = async (req, res, next) => {
 
 
   const documentNumber = await Registration.countDocuments() +1;
-  const num = 7001
+  const num = 8001
 // console.log(documentNumber);
 const id = num+documentNumber;
 // console.log(id);
