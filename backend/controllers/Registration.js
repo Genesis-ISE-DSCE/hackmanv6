@@ -4,52 +4,58 @@ const CustomError = require("../utilis/CustomError")
 const sgMail = require('@sendgrid/mail')
 
 
-exports.createRegistration = async (req, res,next) => {
-  const { name, email, phone, college, teamName, teamMembers,teamEmail,teamPhone, transactionID ,upiID} = req.body;
+exports.createRegistration = async (req, res, next) => {
+  const { name, email, phone, college, teamName, teamMembers, teamEmail, teamPhone, transactionID, upiID } = req.body;
 
-if(!name){
-  return(next(new CustomError("name is required",400)))
-}
-if(!email){
-  return(next(new CustomError("email is required",400)))
-}
-if(!phone){
-  return(next(new CustomError("phone is required",400)))
-}
-if(!college){
-  return(next(new CustomError("college is required",400)))
-}
-if(!teamName){
-  return(next(new CustomError("teamName is required",400)))
-}
-if(!teamMembers){
-  return(next(new CustomError("teamMembers is required",400)))
-}
-if(!teamEmail){
-  return(next(new CustomError("team email is required",400)))
-}
-if(!teamPhone){
-  return(next(new CustomError("team phone is required",400)))
-}
-if(!transactionID){
-  return(next(new CustomError("transactionId is required",400)))
-}
-if(!upiID){
-  return(next(new CustomError("upiId is required",400)))
-}
+  if (!name) {
+    return (next(new CustomError("name is required", 400)))
+  }
+  if (!email) {
+    return (next(new CustomError("email is required", 400)))
+  }
+  if (!phone) {
+    return (next(new CustomError("phone is required", 400)))
+  }
+  if (!college) {
+    return (next(new CustomError("college is required", 400)))
+  }
+  if (!teamName) {
+    return (next(new CustomError("teamName is required", 400)))
+  }
+  if (!teamMembers) {
+    return (next(new CustomError("teamMembers is required", 400)))
+  }
+  if (!teamEmail) {
+    return (next(new CustomError("team email is required", 400)))
+  }
+  if (!teamPhone) {
+    return (next(new CustomError("team phone is required", 400)))
+  }
+  if (!transactionID) {
+    return (next(new CustomError("transactionId is required", 400)))
+  }
+  if (!upiID) {
+    return (next(new CustomError("upiId is required", 400)))
+  }
 
-const user = await Registration.findOne({email});
-console.log(user)
-const team = await Registration.findOne({teamName});
+  const user = await Registration.findOne({ email });
+  console.log(user)
+  const team = await Registration.findOne({ teamName });
 
-if(user){
-  return(next(new CustomError("email already rejistered",401)))
-}
+  if (user) {
+    return (next(new CustomError("email already registered", 401)))
+  }
 
-if(team){
-  return(next(new CustomError("teamName already choosen please find other name",401)))
-}
+  if (team) {
+    return (next(new CustomError("teamName already choosen please find other name", 401)))
+  }
   // Generate uniqueId using current timestamp
+
+
+
+
+
+
   const documentNumber = await Registration.countDocuments() +1;
   const num = 7124
 // console.log(documentNumber);
@@ -58,10 +64,10 @@ const id = num+documentNumber;
 const teamId = `Hackman#${id}`;
   const teamNumber = await Registration.estimatedDocumentCount() +1;
 
-  
+
 
   try {
-   const registeration= await Registration.create({
+    const registeration = await Registration.create({
       teamId,
       name,
       email,
@@ -76,11 +82,11 @@ const teamId = `Hackman#${id}`;
       teamNumber
     });
 
-    
-    res.status(201).json({ registeration: registeration});
+
+    res.status(201).json({ registeration: registeration });
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error' ,err:err});
+    res.status(500).json({ message: 'Server error', err: err });
   }
 };
 
@@ -91,33 +97,33 @@ exports.getAllRegistrations = async (req, res) => {
     res.json(registrations);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error', err:err });
+    res.status(500).json({ message: 'Server error', err: err });
   }
 };
 
 
-exports.getAllTeamNames =async(req,res) =>{
-  try{
+exports.getAllTeamNames = async (req, res) => {
+  try {
     const data = await Registration.find()
-    const teamnames=data.map((item)=>({teamName :item.teamName}))
+    const teamnames = data.map((item) => ({ teamName: item.teamName }))
     res.json(teamnames)
-  }catch (err) {
+  } catch (err) {
     console.error(err);
-    res.status(500).json({ message: 'Server error', err:err });
+    res.status(500).json({ message: 'Server error', err: err });
   }
 }
 
 
-exports.sendEmails = async(req,res)=>{
+exports.sendEmails = async (req, res) => {
 
-  const {email, teamId,teamName}=req.body
+  const { email, teamId, teamName } = req.body
 
   sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-const msg = {
-  to: email, 
-  from: 'genesis.hackman@gmail.com', 
-  subject: 'Confirmation of Registration - HACKMAN v6.0',
-  html: `     <p>Dear Participant,</p>
+  const msg = {
+    to: email,
+    from: 'genesis.hackman@gmail.com',
+    subject: 'Confirmation of Registration - HACKMAN v6.0',
+    html: `     <p>Dear Participant,</p>
   <br>
   <p>Thank you for registering for HACKMAN v6.0! We are delighted to have you and your team <strong>${teamName}</strong> as a participant in this exciting event. This email serves as an acknowledgment of your successful registration.</p>
   <br>
@@ -141,15 +147,58 @@ const msg = {
   <p>Bangalore - 560078</p>
 
   `,
-  
+
+  }
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log(`Email sent`)
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  // }
 }
-sgMail
-  .send(msg)
-  .then(() => {
-    console.log(`Email sent`)
-  })
-  .catch((error) => {
-    console.error(error)
-  })
-// }
-}
+
+exports.sendMassEmails = async (req, res) => {
+
+  try {
+    const registrations = await Registration.find();
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+    registrations.forEach((registration) => {
+      const emailsToSend = [registration.email, ...registration.teamEmail];
+      // console.log(emailsToSend)
+      const teamId = registration.teamId;
+      const teamName = registration.teamName;
+
+      const msg = {
+        to: emailsToSend,
+        from: 'genesis.hackman@gmail.com',
+        subject: 'Registration Confirmation - HACKMAN v6.0',
+        html: `<p>Dear Participant,</p>
+
+          <!-- TODO: Email content -->
+          
+          <p>Your team ${teamName} has sucessfully registered for HACKMAN v6.0! We are delighted to have you as a participant in this exciting event.</p>
+  <p>Please note that your team ID for the event is: <strong>${teamId}</strong>.</p>
+          `,
+      };
+
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log(`Email sent to ${email}`);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
+    });
+
+    res.status(200).json({ message: 'Emails sent successfully' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: 'Server error' });
+  }
+};
