@@ -68,15 +68,15 @@ function MyTableComponent() {
       //   accessor: 'teamNumber',
       // },
       {
-        Header: 'teamName',
+        Header: 'Team Name',
         accessor: 'teamName',
       },
       {
-        Header: 'teamId',
+        Header: 'TeamId',
         accessor: 'teamId',
       },
       {
-        Header: 'college',
+        Header: 'College',
         accessor: 'college',
       },
       {
@@ -84,29 +84,29 @@ function MyTableComponent() {
         accessor: 'name'
       },
       {
-        Header: 'teamMembers',
+        Header: 'Team Members',
         accessor: 'teamMembers'
       },
       {
-        Header: 'email',
+        Header: 'Email',
         accessor: 'email',
       },
       {
-        Header: 'phone',
+        Header: 'Phone',
         accessor: 'phone',
       },
       {
-        Header: 'teamPhone',
+        Header: 'Team Phone',
         accessor: 'teamPhone'
       }, {
-        Header: 'teamEmail',
+        Header: 'Team Email',
         accessor: 'teamEmail'
       },
       {
-        Header: 'transactionID',
+        Header: 'Transaction ID',
         accessor: 'transactionID'
       }, {
-        Header: 'upiID',
+        Header: 'Upi ID',
         accessor: 'upiID'
       },
     ],
