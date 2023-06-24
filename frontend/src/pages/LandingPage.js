@@ -15,7 +15,7 @@ import eva_main from "../assets/images/eva_main.jpg"
 
 function LandingPage() {
     const [isSectionScrolled, setIsSectionScrolled] = useState(false);
-    const launchDate = new Date("June 24, 2023 12:00:00");
+    const launchDate = new Date("June 25, 2023 11:00:00");
 
     // Calculate the initial countdown value
     const currentTime = new Date();

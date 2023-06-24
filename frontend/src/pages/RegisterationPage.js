@@ -43,19 +43,19 @@ function RegisterationPage() {
   });
 
     function handleClick() {
-    const regData = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      college: formData.college,
-      teamName: formData.teamName,
-      teamMembers: formData.teamMembers,
-      theme: formData.theme,
-      transactionID: formData.transactionID,
-      upiID: formData.upiID,
-      teamPhone: formData.teamPhone,
-      teamEmail: formData.teamEmail
-    }
+      const regData = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        college: formData.college,
+        teamName: formData.teamName,
+        teamMembers: formData.teamMembers,
+        theme: formData.theme,
+        transactionID: formData.transactionID,
+        upiID: formData.upiID,
+        teamPhone: formData.teamPhone,
+        teamEmail: formData.teamEmail
+      }
     if(isChecked) {
       setFormErrors(validate2(formData));
       setIsSubmit(true);
