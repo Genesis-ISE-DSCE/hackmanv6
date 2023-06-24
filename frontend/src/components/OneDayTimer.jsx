@@ -33,7 +33,7 @@ function OneDayTimer() {
 
   const fetchServerTime = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/v1/getServerTime");
+      const response = await axios.get("https://hackmanv6.onrender.com/api/v1/getServerTime");
       const serverTime = new Date(response.data.serverTime);
       return serverTime;
     } catch (error) {
