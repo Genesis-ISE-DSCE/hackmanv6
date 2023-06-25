@@ -2,13 +2,13 @@
 const mongoose = require('mongoose');
 
 const projectSchema = new mongoose.Schema({
-  teamName: { type: String, required: true },
-  teamId: { type: String, required: true },
-  techUsed: { type: [String], required: true },
-  pptLink: { type: String },
-  githubLink: { type: String },
-  problemStatement: { type: String, required: true },
-  proposedSolution: { type: String, required: true },
+  teamname: { type: String, required: true },
+  teamid: { type: String, required: true },
+  tech: { type: [String], required: true },
+  pptlink: { type: String },
+  github: { type: String },
+  problem: { type: String, required: true },
+  solution: { type: String, required: true },
   usp: { type: String },
 });
 

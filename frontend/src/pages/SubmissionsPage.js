@@ -39,15 +39,12 @@ function SubmissionsPage() {
         setFormErrors(err);
         if (Object.keys(err).length === 0){
             setIsSubmit(true);
-            console.log(subData);
-            setShowPopup(true);
-            // Axios.post("", subData)
-            // .then((res)=>{
-            //     // const response = res.data.registeration;
-            //     setShowPopup(true)
-            //     // console.log(data)
-            //     })
-            // // .catch((err)=>{setShowError(err)});
+            Axios.post("https://hackmanv6.onrender.com/api/v1/project", subData)
+            .then((res)=>{
+                console.log(subData);
+                setShowPopup(true)
+                })
+            .catch((err)=>{console.log(err)});
           }
     }
 
