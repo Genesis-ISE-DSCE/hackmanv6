@@ -33,9 +33,9 @@ const Navbar = (props) => {
 
             {/* Regiter button */}
             {props.currentPage === 'landing' && (
-            <Link to={"/registeration"} className="font-semibold text-xl">
+            <Link to={"/submissions"} className="font-semibold text-xl">
                 <button className="hidden lg:block pt-1 pb-2 right-0 px-5 py-4 rounded-lg mt-2 mb-2 mr-2 text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#22C3FF]">
-                    Register
+                    Submissions
                 </button>
             </Link>
             )}
@@ -60,9 +60,9 @@ const Navbar = (props) => {
 
                 {/* Register button inside dropdown menu*/}
                 {props.currentPage === 'landing' && (
-                    <Link to={"/registeration"} className="text-[#071E22] font-medium text-base">
+                    <Link to={"/submissions"} className="text-[#071E22] font-medium text-base">
                         <button onClick={() => { setIsOpen(!isOpen); }} className="pb-1 px-2 rounded-lg text-[#071E22] bg-[#D4DFC7] hover:text-white hover:bg-[#22C3FF]">
-                            Register
+                            Submissions
                         </button>
                     </Link>
                 )}
