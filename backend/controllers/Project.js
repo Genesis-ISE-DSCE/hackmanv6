@@ -1,4 +1,5 @@
 const Registration = require('../models/Registration');
+const Project = require('../models/Project');
 const CustomError = require("../utilis/CustomError");
 
 exports.formattedData = async (req, res) => {
@@ -31,3 +32,36 @@ exports.formattedData = async (req, res) => {
       res.status(500).json({ message: 'Server error', err: err });
     }
   };
+
+
+
+exports.createProject = async (req, res) => {
+  try {
+    const project = new Project(req.body);
+    await project.save();
+    res.status(201).json(project);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
+exports.getAllProjects = async (req, res) => {
+  try {
+    const projects = await Project.find();
+    res.json(projects);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+exports.getProjectById = async (req, res) => {
+  try {
+    const project = await Project.findOne({ teId: req.params.teamId });
+    if (!project) {
+      return res.status(404).json({ error: 'Project not found' });
+    }
+    res.json(project);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
