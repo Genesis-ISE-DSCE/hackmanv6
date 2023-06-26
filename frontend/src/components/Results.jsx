@@ -37,7 +37,7 @@ function Results() {
                 <div className="lg:flex lg:justify-between">
                 <div className="lg:flex lg:flex-col md:flex md:flex-col">
                     <img className="lg:w-80 lg:object-center mx-auto w-48" src={prize2} alt="Prize 2" />
-                    <p className="text-[#D4DFC7] font-bold lg:text-2xl">Team : </p>
+                    <p className="text-[#D4DFC7] font-bold lg:text-2xl">Team : 201CreatedChaos</p>
                     <p className="text-[#D4DFC7] font-bold lg:text-2xl">College : DSCE</p>
                     {/* <p className="text-[#D4DFC7] font-bold lg:text-2xl">Project : </p> */}
                 </div>
@@ -49,7 +49,7 @@ function Results() {
                 </div>
                 <div className="lg:flex lg:flex-col md:flex md:flex-col">
                     <img className="lg:w-80 lg:object-center mx-auto w-48" src={prize3} alt="Prize 3" />
-                    <p className="text-[#D4DFC7] font-bold lg:text-2xl">Team : </p>
+                    <p className="text-[#D4DFC7] font-bold lg:text-2xl">Team : TechHeads</p>
                     <p className="text-[#D4DFC7] font-bold lg:text-2xl">College : DSATM</p>
                     {/* <p className="text-[#D4DFC7] font-bold lg:text-2xl">Project : </p> */}
                 </div>
