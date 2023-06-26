@@ -12,13 +12,13 @@ function Counter(props) {
         return () => clearInterval(timer);
     }, [countdown]);
 
-    const days = Math.floor(countdown / 86400).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
+    let days = "00"; //Math.floor(countdown / 86400).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
-    const hours = Math.floor((countdown % 86400) / 3600).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
+    let hours = "00"; //Math.floor((countdown % 86400) / 3600).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
-    const minutes = Math.floor((countdown % 3600) / 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
+    let minutes = "00"; //Math.floor((countdown % 3600) / 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
-    const seconds = Math.floor(countdown % 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
+    let seconds = "00"; //Math.floor(countdown % 60).toLocaleString('en-US',{minimumIntegerDigits:2,useGrouping:false});
 
     return(
        <>

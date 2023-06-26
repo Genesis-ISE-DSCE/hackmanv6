@@ -12,6 +12,7 @@ import TeamNames from '../components/TeamNames';
 import Timeline from '../components/Timeline';
 import '../App.css';
 import eva_main from "../assets/images/eva_main.jpg"
+import Results from '../components/Results';
 
 function LandingPage() {
     const [isSectionScrolled, setIsSectionScrolled] = useState(false);
@@ -55,6 +56,7 @@ function LandingPage() {
             {/* <TeamNames /> */}
             <Faq />
             {/* <Organisers /> */}
+            <Results />
             <Footer />
             <div className="parallax"></div>
         </React.Fragment>
