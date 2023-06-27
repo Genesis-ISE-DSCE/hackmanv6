@@ -13,7 +13,8 @@ function Results() {
 
   const prjdscp = [
     {
-      question: 'Invalid : TerraDapp',
+      question: 'Invalid',
+      project: 'TerraDapp',
       image: prize1,
       answer: (
         <>
@@ -23,7 +24,8 @@ function Results() {
       )
     },
     {
-      question: '201CreatedChaos : LegalEdge',
+      question: '201CreatedChaos',
+      project: 'LegalEdge',
       image: prize2,
       answer: (
         <>A solution to provide an intuitive interface for lawyers and clients to interact, ease the process of appointment scheduling, and build a community of people going through legal problems. Visit the  {" "}
@@ -32,7 +34,8 @@ function Results() {
       )
     },
     {
-      question: 'TechHeads : PraniCure',
+      question: 'TechHeads',
+      project: 'PraniCure',
       image: prize3,
       answer: (
         <>
@@ -60,42 +63,50 @@ function Results() {
             <img src={prjdscp[1].image} alt="Prize" className="w-30 mx-auto mb-4" />
             <button onClick={() => toggleExpand(1)} className="res-question-button">
               {prjdscp[1].question}
+              <br/>
+              {prjdscp[1].project}
               <img className="w-4 ml-2" src={dropdown} alt="Drop down" />
               {expanded[1]}
             </button>
-            {expanded[1] && <p className="faq-answer">{prjdscp[1].answer}</p>}
+            {expanded[1] && <p className="res-answer">{prjdscp[1].answer}</p>}
           </div>
           <div className="faq-question">
             <img src={prjdscp[0].image} alt="Prize" className="w-50 mx-auto mb-4" />
             <button onClick={() => toggleExpand(0)} className="res-question-button">
               {prjdscp[0].question}
+              <br/>
+              {prjdscp[0].project}
               <img className="w-4 ml-2" src={dropdown} alt="Drop down" />
               {expanded[0]}
             </button>
-            {expanded[0] && <p className="faq-answer">{prjdscp[0].answer}</p>}
+            {expanded[0] && <p className="res-answer">{prjdscp[0].answer}</p>}
           </div>
           <div className="faq-question">
             <img src={prjdscp[2].image} alt="Prize" className="w-30 mx-auto mb-4" />
             <button onClick={() => toggleExpand(2)} className="res-question-button">
               {prjdscp[2].question}
+              <br/>
+              {prjdscp[2].project}
               <img className="w-4 ml-2" src={dropdown} alt="Drop down" />
               {expanded[2]}
             </button>
-            {expanded[2] && <p className="faq-answer">{prjdscp[2].answer}</p>}
+            {expanded[2] && <p className="res-answer">{prjdscp[2].answer}</p>}
           </div>
         </div>
 
         {/* Medium and Small Screen Layout */}
-        <div className="lg:hidden flex flex-col items-center">
+        <div className="lg:hidden flex flex-col items-center ">
           {prjdscp.map((item, index) => (
             <div key={index} className="faq-question">
               <img src={item.image} alt="Prize" className="w-30 mx-auto mb-4" />
               <button onClick={() => toggleExpand(index)} className="res-question-button">
                 {item.question}
+                <br/>
+                {item.project}
                 <img className="w-4 ml-2" src={dropdown} alt="Drop down" />
                 {expanded[index]}
               </button>
-              {expanded[index] && <p className="faq-answer">{item.answer}</p>}
+              {expanded[index] && <p className="res-answer">{item.answer}</p>}
             </div>
           ))}
         </div>

@@ -75,9 +75,9 @@
 }
 
 .res-question-button {
-  background-color: #24263B;
+  background-color: #23354E;
   color: #ffffff;
-  width: 100%;
+  width: 90%;
   text-align: left;
   font-size: 20px;
   font-weight: bold;
@@ -118,6 +118,18 @@
 .faq-answer {
   background-color: #ffffff;
   padding: 20px;
+  font-size: 16px;
+  color: #23354E;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+}
+
+.res-answer {
+  background-color: #ffffff;
+  padding: 18px;
+  width: 90%;
+  text-align: justify;
   font-size: 16px;
   color: #23354E;
   border-radius: 10px;
