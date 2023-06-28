@@ -9,10 +9,10 @@ import TeamNames from '../components/TeamNames';
 // import Organisers from '../components/Organisers';
 // import Sponsors from '../components/Sponsors';
 // import Themes from '../components/Themes';
+import Results from '../components/Results';
 import Timeline from '../components/Timeline';
 import '../App.css';
-import eva_main from "../assets/images/eva_main.jpg"
-import Results from '../components/Results';
+import eva_main from "../assets/images/eva_main.jpg";
 
 function LandingPage() {
     const [isSectionScrolled, setIsSectionScrolled] = useState(false);
@@ -50,13 +50,13 @@ function LandingPage() {
             {/* <Navbar currentPage = 'landing'/> */}
             <Counter id="landing"  initialCountdown={initialCountdown} />
             <About />
+            <Results />
             <Timeline />
             {/* <Themes /> */}
             {/* <Sponsors /> */}
             {/* <TeamNames /> */}
             <Faq />
             {/* <Organisers /> */}
-            <Results />
             <Footer />
             <div className="parallax"></div>
         </React.Fragment>

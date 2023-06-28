@@ -125,7 +125,7 @@ const Timeline = () => {
           <div
             key={index}
             className={`${index % 2 === 0 ? "lg:mr-auto" : "lg:ml-auto"
-              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-1/4 ml-80 mr-80 hidden lg:block pt-2`}
+              } mb-8 rounded-lg shadow-lg bg-[#23354E] lg:w-1/4 ml-60 mr-60 hidden lg:block pt-2`}
           >
             <div className="relative px-4 py-3">
               <p className="lg:text-xl lg:pt-0 md:text-2xl md:pt-2 text-[#ffffff] pt-2 text-lg font-poppins font-semibold">{event.title}</p>
