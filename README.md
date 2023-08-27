@@ -21,7 +21,7 @@ HackMan v.6 is an Inter College, extravagant 24-hours Hackathon, hosted by the D
 Website Link:
 
 
-[Figma Design](https://www.hackman.in)
+[Website Link](https://www.hackman.in)
 
 <br />
 <br />
